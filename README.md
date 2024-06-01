@@ -1,13 +1,13 @@
-# dictionary
+# translatype
 
-Make multi languages application easy.
+Make multi languages application easy with type safety internationalization library.
 
 ## Installation
 
 ```bash
-npm install dictionary
-yarn add dictionary
-pnpm add dictionary
+npm install translatype
+yarn add translatype
+pnpm add translatype
 ```
 
 ## Usage
@@ -50,10 +50,10 @@ const dictionary = { en, fr };
 
 ### Create a translator
 
-Create a translator with the dictionary.
+Create a translator with the translatype.
 
 ```typescript
-import { createTranslator } from 'dictionary';
+import { createTranslator } from 'translatype';
 
 const translator = createTranslator({ dictionary, locale: 'en' });
 ```
@@ -77,7 +77,7 @@ const textFr = translatorFr((t) => t.helloWordl);
 
 ## React example
 
-Here is an example of using dictionary with React by creating a custom hook.
+Here is an example of using translatype with React by creating a custom hook.
 
 ```typescript
 const useTranslator = (locale: string) => {

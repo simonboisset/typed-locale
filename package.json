@@ -1,5 +1,5 @@
 {
-  "name": "dictionary",
+  "name": "translatype",
   "version": "0.1.0",
   "description": "Effortlessly construct dynamic text by seamlessly integrating variables into your phrases",
   "main": "dist/index.js",
@@ -14,12 +14,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/simonboisset/dictionary"
+    "url": "https://github.com/simonboisset/translatype"
   },
   "bugs": {
-    "url": "https://github.com/simonboisset/dictionary/issues"
+    "url": "https://github.com/simonboisset/translatype/issues"
   },
-  "homepage": "https://github.com/simonboisset/dictionary",
+  "homepage": "https://github.com/simonboisset/translatype",
   "author": "Simon Boisset <simon@lezo.dev>",
   "license": "MIT",
   "devDependencies": {
