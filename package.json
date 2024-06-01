@@ -1,0 +1,42 @@
+{
+  "name": "dictionary",
+  "version": "0.1.0",
+  "description": "Effortlessly construct dynamic text by seamlessly integrating variables into your phrases",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "rm -rf dist && node build.js && tsc",
+    "test:watch": "vitest",
+    "test": "vitest run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/simonboisset/dictionary"
+  },
+  "bugs": {
+    "url": "https://github.com/simonboisset/dictionary/issues"
+  },
+  "homepage": "https://github.com/simonboisset/dictionary",
+  "author": "Simon Boisset <simon@lezo.dev>",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.13.0",
+    "@types/prettier": "^3.0.0",
+    "esbuild": "^0.21.4",
+    "esbuild-node-externals": "^1.13.1",
+    "prettier": "^3.2.5",
+    "typescript": "^5.4.5",
+    "vitest": "^1.6.0"
+  },
+  "prettier": {
+    "singleQuote": true,
+    "tabWidth": 2,
+    "printWidth": 120
+  },
+  "dependencies": {
+    "phrase-builder": "^0.2.0"
+  }
+}
