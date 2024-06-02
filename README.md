@@ -1,13 +1,13 @@
-# translatype
+# typintl
 
 Make multi languages application easy with type safety internationalization library.
 
 ## Installation
 
 ```bash
-npm install translatype
-yarn add translatype
-pnpm add translatype
+npm install typintl
+yarn add typintl
+pnpm add typintl
 ```
 
 ## Usage
@@ -50,10 +50,10 @@ const dictionary = { en, fr };
 
 ### Create a translator
 
-Create a translator with the translatype.
+Create a translator with the typintl.
 
 ```typescript
-import { createTranslator } from 'translatype';
+import { createTranslator } from 'typintl';
 
 const translator = createTranslator({ dictionary, locale: 'en' });
 ```
@@ -77,7 +77,7 @@ const textFr = translatorFr((t) => t.helloWordl);
 
 ## React example
 
-Here is an example of using translatype with React by creating a custom hook.
+Here is an example of using typintl with React by creating a custom hook.
 
 ```typescript
 const useTranslator = (locale: string) => {

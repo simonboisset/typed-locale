@@ -1,7 +1,7 @@
 {
-  "name": "translatype",
+  "name": "typintl",
   "version": "0.1.0",
-  "description": "Effortlessly construct dynamic text by seamlessly integrating variables into your phrases",
+  "description": "Type safe internationalization library",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "files": [
@@ -14,12 +14,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/simonboisset/translatype"
+    "url": "https://github.com/simonboisset/typintl"
   },
   "bugs": {
-    "url": "https://github.com/simonboisset/translatype/issues"
+    "url": "https://github.com/simonboisset/typintl/issues"
   },
-  "homepage": "https://github.com/simonboisset/translatype",
+  "homepage": "https://github.com/simonboisset/typintl",
   "author": "Simon Boisset <simon@lezo.dev>",
   "license": "MIT",
   "devDependencies": {
