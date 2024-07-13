@@ -8,8 +8,32 @@ export type TranslatorParams<Locale extends string, Translation> = {
 
 export const createTranslator =
   <Locale extends string, Translation>({ dictionary, locale }: TranslatorParams<Locale, Translation>) =>
-  (getPhrase: (translation: Translation) => string, variables?: Record<string, string | number>) => {
-    const phraseWithoutVariables = getPhrase(dictionary[locale]);
-    const phraseWithVariables = buildDoubleBracePhrase(phraseWithoutVariables, variables);
+  <Phrase>(
+    getPhrase: (translation: Translation) => Phrase,
+    ...options: Phrase extends string ? (InferParams<Phrase> extends null ? [] : [InferParams<Phrase>]) : []
+  ): string => {
+    const params = options.length > 0 ? options[0] || undefined : undefined;
+    const phraseWithoutVariables = getPhrase(dictionary[locale]) as string;
+    const phraseWithVariables = buildDoubleBracePhrase(phraseWithoutVariables, params);
     return phraseWithVariables;
   };
+
+export type InferParams<T extends string> = string extends T
+  ? null
+  : T extends `${string}{{${infer Param}}}${infer Rest}`
+    ? { [K in Param | keyof InferParams<Rest>]: string | number }
+    : null;
+
+type InferPhrase<T extends string> = string extends T
+  ? string
+  : T extends `${string}{{${infer Param}}}${infer Rest}`
+    ? `${string}{{${Param}}}${InferPhrase<Rest>}`
+    : string;
+
+export type InferTranslation<T> = {
+  [K in keyof T]: T[K] extends string
+    ? InferPhrase<T[K]>
+    : T[K] extends Record<string, unknown>
+      ? InferTranslation<T[K]>
+      : never;
+};
