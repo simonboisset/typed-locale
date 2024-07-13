@@ -23,13 +23,13 @@
   "author": "Simon Boisset <simon@lezo.dev>",
   "license": "MIT",
   "devDependencies": {
-    "@types/node": "^20.13.0",
+    "@types/node": "^20.14.10",
     "@types/prettier": "^3.0.0",
-    "esbuild": "^0.21.4",
-    "esbuild-node-externals": "^1.13.1",
-    "prettier": "^3.2.5",
-    "typescript": "^5.4.5",
-    "vitest": "^1.6.0"
+    "esbuild": "^0.23.0",
+    "esbuild-node-externals": "^1.14.0",
+    "prettier": "^3.3.2",
+    "typescript": "^5.5.3",
+    "vitest": "^2.0.2"
   },
   "prettier": {
     "singleQuote": true,

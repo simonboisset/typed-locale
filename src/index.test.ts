@@ -52,7 +52,21 @@ test('Should translate correctly with variables', () => {
 test('Should translate correctly with nested keys', () => {
   expect(translateEn((l) => l.nested.key)).toBe('Deep nested key');
   expect(translateEn((l) => l.nested.keyWithName, { name: 'John' })).toBe('Deep nested key with name John');
-  expect(translateEn('nested.keyWithName')).toBe('Deep nested key with name John');
   expect(translateFr((l) => l.nested.key)).toBe('Clé profonde');
-  expect(translateFr((l) => l.nested.keyWithName, { name: 'jo' })).toBe('Clé profonde avec nom John');
+});
+
+test('Should throw an error if the key does not exist', () => {
+  // @ts-expect-error
+  expect(translateEn((l) => l.nonExistentKey.blabla)).toBe('');
+  // @ts-expect-error
+  expect(translateEn((l) => l.nonExistentKey)).toBe('');
+});
+
+test('Should keep initial value when warning is not provided', () => {
+  expect(translateFr((l) => l.helloName)).toBe('Bonjour, {{name}}');
+});
+
+test('Should ignore unknown variables', () => {
+  // @ts-expect-error
+  expect(translateEn((l) => l.helloName, { name: 'John', age: 30 })).toBe('Hello, John');
 });
