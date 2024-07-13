@@ -1,13 +1,13 @@
-# typintl
+# typed-locale
 
 Make multi languages application easy with type safety internationalization library.
 
 ## Installation
 
 ```bash
-npm install typintl
-yarn add typintl
-pnpm add typintl
+npm install typed-locale
+yarn add typed-locale
+pnpm add typed-locale
 ```
 
 ## Usage
@@ -50,10 +50,10 @@ const dictionary = { en, fr };
 
 ### Create a translator
 
-Create a translator with the typintl.
+Create a translator with the typed-locale.
 
 ```typescript
-import { createTranslator } from 'typintl';
+import { createTranslator } from 'typed-locale';
 
 const translator = createTranslator({ dictionary, locale: 'en' });
 ```
@@ -77,7 +77,7 @@ const textFr = translatorFr((t) => t.helloWordl);
 
 ## React example
 
-Here is an example of using typintl with React by creating a custom hook.
+Here is an example of using typed-locale with React by creating a custom hook.
 
 ```typescript
 const useTranslator = (locale: string) => {

@@ -1,5 +1,5 @@
 {
-  "name": "typintl",
+  "name": "typed-locale",
   "version": "0.1.0",
   "description": "Type safe internationalization library",
   "main": "dist/index.js",
@@ -14,12 +14,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/simonboisset/typintl"
+    "url": "https://github.com/simonboisset/typed-locale"
   },
   "bugs": {
-    "url": "https://github.com/simonboisset/typintl/issues"
+    "url": "https://github.com/simonboisset/typed-locale/issues"
   },
-  "homepage": "https://github.com/simonboisset/typintl",
+  "homepage": "https://github.com/simonboisset/typed-locale",
   "author": "Simon Boisset <simon@lezo.dev>",
   "license": "MIT",
   "devDependencies": {
