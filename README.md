@@ -187,6 +187,8 @@ const text = translator((t) => t.helloNameYouHaveMessages, { name: 'World', coun
 console.log(text); // 'Hello, World. You have 3 messages'
 ```
 
+> Be careful that the pluralization using the `count` name as a reserved variable name.
+
 ## Roadmap
 
 Here is the roadmap for the library.
@@ -197,6 +199,7 @@ Here is the roadmap for the library.
 - [x] Strict type checking for variables
 - [x] Default translation for missing key
 - [x] Pluralization
+- [ ] Scoped translation with nested object
 - [ ] Improved type inference and auto-completion for variables
 
 Feel free to open an issue or pull request if you have any idea or suggestion.
