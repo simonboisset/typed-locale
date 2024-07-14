@@ -74,10 +74,20 @@ const dictionary = { en, fr };
 Create a translator with the typed-locale.
 
 ```typescript
+import { createTranslatorFromDictionary } from 'typed-locale';
+
+const translator = createTranslatorFromDictionary({ dictionary, locale: 'en' });
+```
+
+You can create simple translator with only one translation object.
+
+```typescript
 import { createTranslator } from 'typed-locale';
 
-const translator = createTranslator({ dictionary, locale: 'en' });
+const translator = createTranslator(en);
 ```
+
+Be careful that the translator created with `createTranslator` does not support default translation for missing keys.
 
 ### Translate a text
 
@@ -92,7 +102,7 @@ const text = translator((t) => t.helloWordl);
 Translator is pure function, so you need to create a new translator for changing the locale.
 
 ```typescript
-const translatorFr = createTranslator({ dictionary, locale: 'fr' });
+const translatorFr = createTranslatorFromDictionary({ dictionary, locale: 'fr', defaultLocale: 'en' });
 const textFr = translatorFr((t) => t.helloWordl);
 ```
 
@@ -102,7 +112,7 @@ Here is an example of using typed-locale with React by creating a custom hook.
 
 ```typescript
 const useTranslator = (locale: string) => {
-  const translator = createTranslator({ dictionary, locale });
+  const translator = createTranslatorFromDictionary({ dictionary, locale, defaultLocale: 'en' });
 
   return translator;
 };
@@ -135,15 +145,38 @@ The variable will be automatically typed by the translator.
 const text = translator((t) => t.hello, { name: 'World' });
 ```
 
+## Default translation
+
+If you have some translations that are not ready for all languages, you can use InferPartialTranslation type to define the other translations.
+
+```typescript
+export const en = {
+  hello: 'Hello, {{name}}!',
+  anotherKey: 'Another',
+} as const;
+
+type Translation = InferTranslation<typeof en>;
+
+const fr: InferPartialTranslation<Translation> = {
+  hello: 'Bonjour, {{name}}!',
+};
+
+const dictionary = { en, fr };
+
+const translator = createTranslatorFromDictionary({ dictionary, locale: 'fr', defaultLocale: 'en' });
+
+console.log(translator((t) => t.anotherKey)); // 'Another'
+```
+
 ## Roadmap
 
 - [x] Type-safe declaration
 - [x] Basic translation
 - [x] Variable in translation
 - [x] Strict type checking for variables
+- [x] Default translation for missing key
 - [ ] Improved type inference and auto-completion for variables
 - [ ] Pluralization
-- [ ] Default translation for missing key
 
 Feel free to open an issue or pull request if you have any idea or suggestion.
 
@@ -166,12 +199,4 @@ export const en = {
 
 ```typescript
 const text = translator((t) => t.apple, { count: 2 });
-```
-
-### Default translation
-
-Many applications have multiple languages, but not all translations are ready for all languages. It would be nice to have a default translation when the key is not found in the current locale.
-
-```typescript
-const translator = createTranslator({ dictionary, locale: 'en', default: 'en' });
 ```

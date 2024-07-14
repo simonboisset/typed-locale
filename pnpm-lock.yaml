@@ -7,10 +7,6 @@ settings:
 importers:
 
   .:
-    dependencies:
-      phrase-builder:
-        specifier: ^0.2.0
-        version: 0.2.0
     devDependencies:
       '@types/node':
         specifier: ^20.14.10
@@ -591,9 +587,6 @@ packages:
     resolution: {integrity: sha512-vE7JKRyES09KiunauX7nd2Q9/L7lhok4smP9RZTDeD4MVs72Dp2qNFVz39Nz5a0FVEW0BJR6C0DYrq6unoziZA==}
     engines: {node: '>= 14.16'}
 
-  phrase-builder@0.2.0:
-    resolution: {integrity: sha512-NWJ1UUetj/gL2OzgygK7gDbh/LM4+vCt4dX7pNIMPHNY1X0zbVQg7DG94Ycaar34P8YkwSu6vnrAvKZgBZtIdg==}
-
   picocolors@1.0.1:
     resolution: {integrity: sha512-anP1Z8qwhkbmu7MFP5iTt+wQKXgwzf7zTyGlcdzabySa9vd0Xt392U0rVmz9poOaBj0uHJKyyo9/upk0HrEQew==}
 
@@ -1158,8 +1151,6 @@ snapshots:
   pathe@1.1.2: {}
 
   pathval@2.0.0: {}
-
-  phrase-builder@0.2.0: {}
 
   picocolors@1.0.1: {}
 

@@ -1,5 +1,6 @@
 import { expect, test } from 'vitest';
-import { createTranslator, InferTranslation } from '.';
+import { InferPartialTranslation, InferTranslation } from './infer';
+import { createTranslatorFromDictionary } from './translator-from-dictionary';
 
 const en = {
   hello: 'Hello',
@@ -11,11 +12,15 @@ const en = {
     key: 'Deep nested key',
     keyWithName: 'Deep nested key with name {{name}}',
   },
+  missingKeys: {
+    missingKey: 'Missing key',
+    missingKeyVariable: 'Missing key with variable {{name}}',
+  },
 } as const;
 
 type Translation = InferTranslation<typeof en>;
 
-const fr: Translation = {
+const fr: InferPartialTranslation<Translation> = {
   hello: 'Bonjour',
   helloName: 'Bonjour, {{name}}',
   goodbye: 'Au revoir',
@@ -29,8 +34,8 @@ const fr: Translation = {
 
 const dictionary = { en, fr };
 
-const translateEn = createTranslator({ dictionary, locale: 'en' });
-const translateFr = createTranslator({ dictionary, locale: 'fr' });
+const translateEn = createTranslatorFromDictionary({ dictionary, locale: 'en', defaultLocale: 'en' });
+const translateFr = createTranslatorFromDictionary({ dictionary, locale: 'fr', defaultLocale: 'en' });
 
 test('Should translate correctly', () => {
   expect(translateEn((l) => l.hello)).toBe('Hello');
@@ -69,4 +74,12 @@ test('Should keep initial value when warning is not provided', () => {
 test('Should ignore unknown variables', () => {
   // @ts-expect-error
   expect(translateEn((l) => l.helloName, { name: 'John', age: 30 })).toBe('Hello, John');
+});
+
+test('Should return default locale if the key does not exist', () => {
+  expect(translateFr((l) => l.missingKeys.missingKey)).toBe('Missing key');
+});
+
+test('Should return default locale with variables if the key does not exist', () => {
+  expect(translateFr((l) => l.missingKeys.missingKeyVariable, { name: 'John' })).toBe('Missing key with variable John');
 });
