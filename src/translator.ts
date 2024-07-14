@@ -1,4 +1,5 @@
 import { buildDoubleBracePhrase } from './phrase-builder';
+import { overridePhraseIfPlural } from './plural';
 
 type InferParams<T extends string> = T extends `${string}{{${infer Param}}}${infer Rest}`
   ? { [K in Param | keyof InferParams<Rest>]: string | number }
@@ -12,7 +13,7 @@ export type Translator<Translation> = <Phrase extends string>(
 export const createTranslator =
   <Translation>(translation: Translation): Translator<Translation> =>
   (getPhrase, variables) => {
-    const phraseWithoutVariables = getSafePhrase(getPhrase, translation);
+    const phraseWithoutVariables = overridePhraseIfPlural(getSafePhrase(getPhrase, translation), variables);
     const phraseWithVariables = buildDoubleBracePhrase(phraseWithoutVariables, variables);
     return phraseWithVariables;
   };

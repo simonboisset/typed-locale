@@ -168,35 +168,39 @@ const translator = createTranslatorFromDictionary({ dictionary, locale: 'fr', de
 console.log(translator((t) => t.anotherKey)); // 'Another'
 ```
 
+## Pluralization
+
+You can use pluralization by using the `plural` in your translation object.
+
+```javascript
+export const en = {
+   helloNameYouHaveMessages: plural({
+    none: 'Hello, {{name}}. You have no messages',
+    one: 'Hello, {{name}}. You have 1 message',
+    other: 'Hello, {{name}}. You have {{count}} messages',
+  }),
+} as const;
+
+const translator = createTranslator(en);
+
+const text = translator((t) => t.helloNameYouHaveMessages, { name: 'World', count: 3 });
+console.log(text); // 'Hello, World. You have 3 messages'
+```
+
 ## Roadmap
+
+Here is the roadmap for the library.
 
 - [x] Type-safe declaration
 - [x] Basic translation
 - [x] Variable in translation
 - [x] Strict type checking for variables
 - [x] Default translation for missing key
+- [x] Pluralization
 - [ ] Improved type inference and auto-completion for variables
-- [ ] Pluralization
 
 Feel free to open an issue or pull request if you have any idea or suggestion.
 
-## Thinking about next features (not implemented yet)
-
-The following features are not implemented yet, but I'm thinking about them.
-
-### Pluralization
-
-It's hard to handle pluralization in a type-safe way, but I'm thinking about the following way.
-
-```javascript
-export const en = {
-  apple: plural({
-    one: 'One apple',
-    other: '{count} apples',
-  }),
-} as const;
 ```
 
-```typescript
-const text = translator((t) => t.apple, { count: 2 });
 ```

@@ -1,4 +1,4 @@
-type InferPhrase<T extends string> = T extends `${string}{{${infer Param}}}${infer Rest}`
+export type InferPhrase<T extends string> = T extends `${string}{{${infer Param}}}${infer Rest}`
   ? `${string}{{${Param}}}${InferPhrase<Rest>}`
   : string;
 

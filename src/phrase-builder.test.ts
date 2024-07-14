@@ -55,7 +55,7 @@ test('i18n phrase without parameters', () => {
   expect(buildedPhrase).toBe('Hello {{name}}');
 });
 
-test('i18n dobble brackets phrase with parameters', () => {
+test('i18n phrase with parameters', () => {
   const phrase = 'Hello {{name}}';
   const buildedPhrase = buildDoubleBracePhrase(phrase, { name: 'World' });
   expect(buildedPhrase).toBe('Hello World');

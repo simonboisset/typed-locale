@@ -1,4 +1,5 @@
 import { buildDoubleBracePhrase } from './phrase-builder';
+import { overridePhraseIfPlural } from './plural';
 import { getSafePhrase, Translator } from './translator';
 
 type CreateTranslatorFromDictionaryParams<
@@ -18,8 +19,10 @@ export const createTranslatorFromDictionary =
     locale,
   }: CreateTranslatorFromDictionaryParams<Dictionary, Locale, DefaultLocale>): Translator<Dictionary[DefaultLocale]> =>
   (getPhrase, variables) => {
-    const phraseWithoutVariables =
-      getSafePhrase(getPhrase, dictionary[locale] as any) || getSafePhrase(getPhrase, dictionary[defaultLocale]);
+    const phraseWithoutVariables = overridePhraseIfPlural(
+      getSafePhrase(getPhrase, dictionary[locale] as any) || getSafePhrase(getPhrase, dictionary[defaultLocale]),
+      variables,
+    );
 
     const phraseWithVariables = buildDoubleBracePhrase(phraseWithoutVariables, variables);
     return phraseWithVariables;
