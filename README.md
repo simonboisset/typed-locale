@@ -87,7 +87,7 @@ import { createTranslator } from 'typed-locale';
 const translator = createTranslator(en);
 ```
 
-Be careful that the translator created with `createTranslator` does not support default translation for missing keys.
+> Be careful that the translator created with `createTranslator` does not support default translation for missing keys.
 
 ### Translate a text
 
@@ -189,6 +189,24 @@ console.log(text); // 'Hello, World. You have 3 messages'
 
 > Be careful that the pluralization using the `count` name as a reserved variable name.
 
+## Scoped translation
+
+You can use scoped translation by using `getTranslatorScope` function.
+
+```javascript
+export const en = {
+  hello: 'Hello, {{name}}!',
+  nested: {
+    hello: 'Hello, {{name}}!',
+  },
+} as const;
+
+const translator = createTranslator(en);
+const nestedTranslator = getTranslatorScope(translator, (t) => t.nested);
+
+const text = nestedTranslator((t) => t.hello, { name: 'World' });
+```
+
 ## Roadmap
 
 Here is the roadmap for the library.
@@ -199,11 +217,7 @@ Here is the roadmap for the library.
 - [x] Strict type checking for variables
 - [x] Default translation for missing key
 - [x] Pluralization
-- [ ] Scoped translation with nested object
+- [x] Scoped translation with nested object
 - [ ] Improved type inference and auto-completion for variables
 
 Feel free to open an issue or pull request if you have any idea or suggestion.
-
-```
-
-```

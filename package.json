@@ -1,11 +1,21 @@
 {
   "name": "typed-locale",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Type safe internationalization library",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "files": [
     "dist"
+  ],
+  "keywords": [
+    "i18n",
+    "internationalization",
+    "locale",
+    "typed-i18n",
+    "typed-locale",
+    "type-safe-i18n",
+    "type-safe-locale",
+    "typescript"
   ],
   "scripts": {
     "build": "rm -rf dist && node build.js && tsc",
