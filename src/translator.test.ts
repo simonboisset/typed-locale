@@ -15,6 +15,7 @@ const en = {
     missingKey: 'Missing key',
     missingKeyVariable: 'Missing key with variable {{name}}',
   },
+  repeatedVariables: 'Hello, {{name}}! How are you, {{name}}? Have a nice day, {{name}}!',
 } as const;
 
 const fr = {
@@ -69,4 +70,10 @@ test('Should keep initial value when warning is not provided', () => {
 test('Should ignore unknown variables', () => {
   // @ts-expect-error
   expect(translateEn((l) => l.helloName, { name: 'John', age: 30 })).toBe('Hello, John');
+});
+
+test('Should use variables multiple times', () => {
+  expect(translateEn((l) => l.repeatedVariables, { name: 'John' })).toBe(
+    'Hello, John! How are you, John? Have a nice day, John!',
+  );
 });

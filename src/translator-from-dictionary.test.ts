@@ -16,6 +16,7 @@ const en = {
     missingKey: 'Missing key',
     missingKeyVariable: 'Missing key with variable {{name}}',
   },
+  repeatedVariables: 'Hello, {{name}}! How are you, {{name}}? Have a nice day, {{name}}!',
 } as const;
 
 type Translation = InferTranslation<typeof en>;
@@ -30,6 +31,7 @@ const fr: InferPartialTranslation<Translation> = {
     key: 'Clé profonde',
     keyWithName: 'Clé profonde avec nom {{name}}',
   },
+  repeatedVariables: 'Hello, {{name}}! How are you, {{name}}? Have a nice day, {{name}}!',
 };
 
 const dictionary = { en, fr };
@@ -82,4 +84,10 @@ test('Should return default locale if the key does not exist', () => {
 
 test('Should return default locale with variables if the key does not exist', () => {
   expect(translateFr((l) => l.missingKeys.missingKeyVariable, { name: 'John' })).toBe('Missing key with variable John');
+});
+
+test('Should use variables multiple times', () => {
+  expect(translateEn((l) => l.repeatedVariables, { name: 'John' })).toBe(
+    'Hello, John! How are you, John? Have a nice day, John!',
+  );
 });

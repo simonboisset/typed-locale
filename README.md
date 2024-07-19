@@ -35,7 +35,7 @@ pnpm i typed-locale
 
 First you need to create a translation object.
 
-```javascript
+```typescript
 export const en = {
   helloWordl: 'Hello, World!',
 } as const;
@@ -76,7 +76,7 @@ Create a translator with the typed-locale.
 ```typescript
 import { createTranslatorFromDictionary } from 'typed-locale';
 
-const translator = createTranslatorFromDictionary({ dictionary, locale: 'en' });
+const translator = createTranslatorFromDictionary({ dictionary, locale: 'en', defaultLocale: 'en' });
 ```
 
 You can create simple translator with only one translation object.
@@ -133,7 +133,7 @@ const MyComponent = () => {
 
 You can use variables in translation.
 
-```javascript
+```typescript
 export const en = {
   hello: 'Hello, {{name}}!',
 } as const;
@@ -172,9 +172,11 @@ console.log(translator((t) => t.anotherKey)); // 'Another'
 
 You can use pluralization by using the `plural` in your translation object.
 
-```javascript
+```typescript
+import { plural } from 'typed-locale';
+
 export const en = {
-   helloNameYouHaveMessages: plural({
+  helloNameYouHaveMessages: plural({
     none: 'Hello, {{name}}. You have no messages',
     one: 'Hello, {{name}}. You have 1 message',
     other: 'Hello, {{name}}. You have {{count}} messages',
@@ -193,7 +195,7 @@ console.log(text); // 'Hello, World. You have 3 messages'
 
 You can use scoped translation by using `getTranslatorScope` function.
 
-```javascript
+```typescript
 export const en = {
   hello: 'Hello, {{name}}!',
   nested: {
@@ -219,5 +221,6 @@ Here is the roadmap for the library.
 - [x] Pluralization
 - [x] Scoped translation with nested object
 - [ ] Improved type inference and auto-completion for variables
+- [ ] Support for lazy loading
 
 Feel free to open an issue or pull request if you have any idea or suggestion.
