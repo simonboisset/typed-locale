@@ -224,3 +224,49 @@ Here is the roadmap for the library.
 - [ ] Support for lazy loading
 
 Feel free to open an issue or pull request if you have any idea or suggestion.
+
+## Contribution guide
+
+This library is still in the early stage, so any contribution is welcome.
+Here are some ways to contribute to this library.
+
+In general, the contribution process is as follows.
+
+1. Fork this repository and make changes
+2. Create a pull request
+3. Wait for the review
+4. I will review the pull request
+5. If everything is fine, I will merge the pull request and release a new version
+
+### Setup the project locally
+
+After forking this repository, you can set up the project locally by following the steps below.
+
+```bash
+pnpm install
+```
+
+As you can see, this project uses `pnpm` as a package manager. If you don't have `pnpm` installed, you can install it by running the following command.
+
+```bash
+npm install -g pnpm
+```
+
+### Run the test
+
+You can run the test by running the following command.
+
+```bash
+pnpm test
+```
+
+### Write your update
+
+After setting up the project locally, you can make changes to the code.
+
+> For every change, you need to write tests to make sure that the changes work as expected.
+> I will be attentive to the test coverage, so please write tests for every change.
+
+Then you can commit your changes and create a pull request.
+
+Thank you for reading this README.md file. I hope you enjoy using this library.
