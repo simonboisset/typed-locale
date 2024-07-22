@@ -16,11 +16,6 @@ Each translation experience I had was not satisfying beacuse of the following re
 
 `typed-locale` is designed to be type-safe, framework-agnostic, and pure function.
 
-## Contribution
-
-This library is still in the early stage, so any contribution is welcome.
-Any kind of contribution is welcome, such as bug reports, feature requests, documentation improvements, and so on.
-
 ## Installation
 
 ```bash
