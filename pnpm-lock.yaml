@@ -8,9 +8,6 @@ importers:
 
   .:
     devDependencies:
-      '@types/node':
-        specifier: ^20.14.10
-        version: 20.14.10
       '@types/prettier':
         specifier: ^3.0.0
         version: 3.0.0
@@ -1254,6 +1251,7 @@ snapshots:
   '@types/node@20.14.10':
     dependencies:
       undici-types: 5.26.5
+    optional: true
 
   '@types/prettier@3.0.0':
     dependencies:
@@ -1769,7 +1767,8 @@ snapshots:
 
   typescript@5.5.3: {}
 
-  undici-types@5.26.5: {}
+  undici-types@5.26.5:
+    optional: true
 
   vite-node@2.0.2(@types/node@20.14.10):
     dependencies:
