@@ -17,3 +17,19 @@ export type InferPartialTranslation<T> = Partial<{
       ? InferPartialTranslation<T[K]>
       : never;
 }>;
+
+export type InferParams<T extends string> = T extends `${string}{{${infer Param}}}${infer Rest}`
+  ? { [K in Param | keyof InferParams<Rest>]: string | number }
+  : {};
+
+export type InferTranslatorPhrase<T extends string> = T extends `${string}{{${infer Param}}}${infer Rest}`
+  ? (props: { [K in Param | keyof InferParams<Rest>]: string | number }) => string
+  : string;
+
+export type InferTranslationGenerator<T> = {
+  [K in keyof T]: T[K] extends string
+    ? InferTranslatorPhrase<T[K]>
+    : T[K] extends Record<string, unknown>
+      ? InferTranslationGenerator<T[K]>
+      : never;
+};

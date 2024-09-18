@@ -1,6 +1,4 @@
-import { buildDoubleBracePhrase } from './phrase-builder';
-import { overridePhraseIfPlural } from './plural';
-import { getSafePhrase, Translator } from './translator';
+import { getSafePhrase, getTranslationGenerator, Translator } from './translator';
 
 type CreateTranslatorFromDictionaryParams<
   Dictionary extends Record<string, any>,
@@ -18,12 +16,9 @@ export const createTranslatorFromDictionary =
     defaultLocale,
     locale,
   }: CreateTranslatorFromDictionaryParams<Dictionary, Locale, DefaultLocale>): Translator<Dictionary[DefaultLocale]> =>
-  (getPhrase, variables) => {
-    const phraseWithoutVariables = overridePhraseIfPlural(
-      getSafePhrase(getPhrase, dictionary[locale] as any) || getSafePhrase(getPhrase, dictionary[defaultLocale]),
-      variables,
-    );
+  (getPhrase) => {
+    const defaultGenerator = getTranslationGenerator(dictionary[defaultLocale]);
+    const localeGenerator = getTranslationGenerator(dictionary[locale]);
 
-    const phraseWithVariables = buildDoubleBracePhrase(phraseWithoutVariables, variables);
-    return phraseWithVariables;
+    return getSafePhrase(getPhrase, localeGenerator) || getSafePhrase(getPhrase, defaultGenerator);
   };

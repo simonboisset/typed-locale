@@ -1,10 +1,11 @@
+import { InferTranslationGenerator } from './infer';
 import { Translator } from './translator';
 
-export const getTranslatorScope = <Translation, Scope>(
+export const getTranslatorScope = <Translation extends Record<string, unknown>, Scope extends Record<string, unknown>>(
   translator: Translator<Translation>,
-  getScope: (translator: Translation) => Scope,
+  getScope: (translator: InferTranslationGenerator<Translation>) => InferTranslationGenerator<Scope>,
 ): Translator<Scope> => {
-  return (scope: (scope: Scope) => string, variables?: Record<string, any>) => {
-    return translator((t) => scope(getScope(t)), variables);
+  return (getPhrase: (translation: InferTranslationGenerator<Scope>) => string) => {
+    return translator((t) => getPhrase(getScope(t)));
   };
 };
