@@ -221,6 +221,47 @@ const text = nestedTranslator((t) => t.hello({ name: 'World' }));
 console.log(text); // 'Nested Hello, World!'
 ```
 
+## Lazy Loading
+
+`typed-locale` supports lazy loading of translations, which can be useful for large applications or when you want to load translations on-demand.
+
+### Create a lazy translator
+
+To use lazy loading, you need to create a lazy translator using the `createLazyTranslator` function.
+
+```typescript
+import { createLazyTranslator, LazyLoadFunction } from 'typed-locale';
+
+const lazyLoadFn: LazyLoadFunction = async (paths: string[]) => {
+  // Implement your lazy loading logic here
+  const translation = await fetchTranslation(paths);
+  return translation;
+};
+
+const initialTranslations = {
+  // Optional
+  // Add any initial translations you want to have available immediately
+};
+
+const lazyTranslator = createLazyTranslator(lazyLoadFn, initialTranslations);
+```
+
+### Use the lazy translator
+
+You can use the lazy translator similarly to the regular translator, but it returns a Promise that resolves to the translated string.
+
+```typescript
+const translatedText = await lazyTranslator((t) => t.hello);
+console.log(translatedText); // 'Hello'
+
+const translatedTextWithName = await lazyTranslator((t) => t.helloName({ name: 'World' }));
+console.log(translatedTextWithName); // 'Hello, World'
+```
+
+### Caching
+
+The lazy translator automatically caches loaded translations, so subsequent requests for the same key will not trigger additional lazy loading.
+
 ## Roadmap
 
 Here is the roadmap for the library.
@@ -233,7 +274,7 @@ Here is the roadmap for the library.
 - [x] Pluralization
 - [x] Scoped translation with nested object
 - [x] Improved type inference and auto-completion for variables
-- [ ] Support for lazy loading
+- [x] Support for lazy loading
 
 Feel free to open an issue or pull request if you have any idea or suggestion.
 

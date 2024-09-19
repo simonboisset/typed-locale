@@ -10,13 +10,11 @@ export type InferTranslation<T> = {
       : never;
 };
 
-export type InferPartialTranslation<T> = Partial<{
-  [K in keyof T]: T[K] extends string
-    ? InferPhrase<T[K]>
-    : T[K] extends Record<string, unknown>
-      ? InferPartialTranslation<T[K]>
-      : never;
-}>;
+export type DeepPartial<T> = {
+  [P in keyof T]?: DeepPartial<T[P]>;
+};
+
+export type InferPartialTranslation<T> = DeepPartial<T>;
 
 export type InferParams<T extends string> = T extends `${string}{{${infer Param}}}${infer Rest}`
   ? { [K in Param | keyof InferParams<Rest>]: string | number }

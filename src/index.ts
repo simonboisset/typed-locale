@@ -1,6 +1,7 @@
 export type { InferPartialTranslation, InferTranslation } from './infer';
 export type { Translator } from './translator';
 
+export { createLazyTranslator } from './lazy-translator';
 export { buildDoubleBracePhrase } from './phrase-builder';
 export { plural } from './plural';
 export { createTranslator } from './translator';
