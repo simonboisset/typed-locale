@@ -21,7 +21,7 @@ export const VersionSelect = ({expand}: {expand?: boolean}) => {
 
   return (
     <Select value={value} onValueChange={onSelect}>
-      <SelectTrigger className={cn('rounded-md', expand ? 'w-full' : 'w-24')}>
+      <SelectTrigger className={cn('rounded-md', expand ? 'w-full' : 'w-24')} aria-label={`Version ${value}`}>
         <SelectValue>{value}</SelectValue>
       </SelectTrigger>
       <SelectContent>

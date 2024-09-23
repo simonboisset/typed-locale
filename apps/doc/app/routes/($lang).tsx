@@ -15,12 +15,10 @@ export const meta: MetaFunction<typeof loader> = ({data}) => {
   if (!data) return [];
   const t = createTranslator(data.dictionary);
   return [
-    {
-      title: 'Typed Locale',
-      viewport: 'width=device-width, initial-scale=1',
-      charset: 'utf-8',
-      description: t ? t(l => l.subtitle) : '',
-    },
+    {title: 'Typed Locale'},
+    {name: 'description', content: t ? t(l => l.subtitle) : ''},
+    {name: 'viewport', content: 'width=device-width, initial-scale=1'},
+    {name: 'charset', content: 'utf-8'},
   ];
 };
 

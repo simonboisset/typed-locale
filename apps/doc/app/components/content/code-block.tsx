@@ -29,7 +29,12 @@ export function CodeBlock({children, className}: {children: string; className: s
           </pre>
         )}
       </Highlight>
-      <Button variant="outline" size="icon" className="absolute top-2 right-2" onClick={copyToClipboard}>
+      <Button
+        variant="outline"
+        size="icon"
+        className="absolute top-2 right-2"
+        onClick={copyToClipboard}
+        aria-label={isCopied ? 'Copied' : 'Copy'}>
         {isCopied ? <CheckIcon className="h-4 w-4" /> : <CopyIcon className="h-4 w-4" />}
       </Button>
     </div>

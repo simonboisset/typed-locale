@@ -27,7 +27,9 @@ export const LanguageSelect = ({expand}: {expand?: boolean}) => {
 
   return (
     <Select value={value} onValueChange={onSelect}>
-      <SelectTrigger className={cn('rounded-md', expand ? 'w-full' : 'w-16')}>
+      <SelectTrigger
+        className={cn('rounded-md', expand ? 'w-full' : 'w-16')}
+        aria-label={localeOptions.find(locale => locale.value === value)?.label}>
         <SelectValue>
           <span className="mr-2">{localeOptions.find(locale => locale.value === value)?.flag}</span>
           <span>{expand && localeOptions.find(locale => locale.value === value)?.label}</span>
