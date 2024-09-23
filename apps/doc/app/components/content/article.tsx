@@ -68,7 +68,7 @@ export const ArticleContent = ({content, toc, title, nextArticle, previousArticl
 
   return (
     <>
-      <main className="w-full max-w-2xl pb-16">
+      <main className="w-full max-w-2xl pb-16 mx-auto">
         <h1 data-heading={title} className="text-4xl font-bold mb-4 scroll-mt-20">
           {title}
         </h1>
