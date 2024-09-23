@@ -32,6 +32,7 @@ export const ScreenshotSection = () => {
             className="mx-auto rounded-xl border shadow-xl"
             autoPlay
             loop
+            muted
             src="https://lezo-files.s3.eu-west-3.amazonaws.com/media/typed-locale-demo.mp4"
           />
         </div>
