@@ -33,6 +33,8 @@ export const ScreenshotSection = () => {
             autoPlay
             loop
             muted
+            playsInline
+            controls
             src="https://lezo-files.s3.eu-west-3.amazonaws.com/media/typed-locale-demo.mp4"
           />
         </div>
