@@ -1,0 +1,21 @@
+
+
+> typed-locale@0.4.2 build /Users/simonboisset/Documents/GitHub/dictionary/packages/typed-locale
+> tsup
+
+[34mCLI[39m Building entry: src/index.ts
+[34mCLI[39m Using tsconfig: tsconfig.json
+[34mCLI[39m tsup v8.3.0
+[34mCLI[39m Using tsup config: /Users/simonboisset/Documents/GitHub/dictionary/packages/typed-locale/tsup.config.ts
+[34mCLI[39m Target: esnext
+[34mCLI[39m Cleaning output folder
+[34mCJS[39m Build start
+[34mESM[39m Build start
+[32mCJS[39m [1mdist/index.js [22m[32m5.48 KB[39m
+[32mCJS[39m ⚡️ Build success in 14ms
+[32mESM[39m [1mdist/index.mjs [22m[32m4.23 KB[39m
+[32mESM[39m ⚡️ Build success in 14ms
+[34mDTS[39m Build start
+[32mDTS[39m ⚡️ Build success in 594ms
+[32mDTS[39m [1mdist/index.d.ts  [22m[32m3.32 KB[39m
+[32mDTS[39m [1mdist/index.d.mts [22m[32m3.32 KB[39m

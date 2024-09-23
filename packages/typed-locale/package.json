@@ -1,0 +1,44 @@
+{
+  "name": "typed-locale",
+  "version": "0.4.2",
+  "description": "Type safe internationalization library",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "i18n",
+    "internationalization",
+    "locale",
+    "typed-i18n",
+    "typed-locale",
+    "type-safe-i18n",
+    "type-safe-locale",
+    "typescript"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "test:watch": "vitest",
+    "test": "vitest run",
+    "ts": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/simonboisset/typed-locale",
+    "directory": "packages/typed-locale"
+  },
+  "bugs": {
+    "url": "https://github.com/simonboisset/typed-locale/issues"
+  },
+  "homepage": "https://github.com/simonboisset/typed-locale",
+  "author": "Simon Boisset <simon@lezo.dev>",
+  "license": "MIT",
+  "devDependencies": {
+    "tsup": "^8.3.0",
+    "typescript": "^5.6.2",
+    "vitest": "^2.1.1"
+  }
+}

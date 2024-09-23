@@ -1,50 +1,30 @@
 {
-  "name": "typed-locale",
+  "name": "typed-locale-repos",
   "version": "0.4.2",
-  "description": "Type safe internationalization library",
-  "main": "dist/index.js",
-  "module": "dist/index.mjs",
-  "types": "dist/index.d.ts",
-  "files": [
-    "dist"
-  ],
-  "keywords": [
-    "i18n",
-    "internationalization",
-    "locale",
-    "typed-i18n",
-    "typed-locale",
-    "type-safe-i18n",
-    "type-safe-locale",
-    "typescript"
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
   ],
   "scripts": {
-    "build": "tsup",
-    "dev": "tsup --watch",
-    "test:watch": "vitest",
-    "test": "vitest run"
+    "build": "turbo build",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "ts": "turbo ts",
+    "test": "turbo test"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/simonboisset/typed-locale"
-  },
-  "bugs": {
-    "url": "https://github.com/simonboisset/typed-locale/issues"
-  },
-  "homepage": "https://github.com/simonboisset/typed-locale",
-  "author": "Simon Boisset <simon@lezo.dev>",
-  "license": "MIT",
   "devDependencies": {
-    "@types/prettier": "^3.0.0",
-    "prettier": "^3.3.3",
-    "tsup": "^8.3.0",
-    "typescript": "^5.6.2",
-    "vitest": "^2.1.1"
+    "monoversion": "^1.2.2",
+    "prettier": "^3.3.2",
+    "turbo": "^2.0.6"
   },
   "prettier": {
     "singleQuote": true,
     "tabWidth": 2,
-    "printWidth": 120
+    "printWidth": 120,
+    "arrowParens": "avoid",
+    "bracketSameLine": true,
+    "bracketSpacing": false,
+    "trailingComma": "all"
   },
   "packageManager": "pnpm@9.5.0+sha256.dbdf5961c32909fb030595a9daa1dae720162e658609a8f92f2fa99835510ca5"
 }
