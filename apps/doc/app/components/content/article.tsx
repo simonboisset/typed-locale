@@ -7,6 +7,7 @@ import {remark} from 'remark';
 import html from 'remark-html';
 import {useTranslation} from '~/contents/i18n/translator';
 import {getAppUrl} from '~/contents/navigation/get-url';
+import {cn} from '~/lib/utils';
 import {useAppConfig} from '~/routes/($lang)';
 import {Card, CardDescription, CardHeader, CardTitle} from '../ui/card';
 import {CodeBlock} from './code-block';
@@ -17,7 +18,7 @@ export const processedContent = async (content: string) => {
 
   const processedContent = result
     .toString()
-    .replace(/<(h[1-6])>(.*?)<\/h[1-6]>/g, (match, tag, content) => {
+    .replace(/<(h[1-6])>(.*?)<\/h[1-6]>/g, (_, tag, content) => {
       if (tag === 'h1') return '';
       return `<${tag} data-heading="${content}" class="scroll-mt-20">${content}</${tag}>`;
     })
@@ -76,7 +77,12 @@ export const ArticleContent = ({content, toc, title, nextArticle, previousArticl
           {t(l => l.article.estimatedReadingTime({count: estimatedReadingTime}))}
         </p>
         <div
-          className="text-foreground prose prose-headings:text-foreground prose-strong:text-primary max-w-none prose-img:rounded-lg prose-img:border prose-img:shadow-lg prose-img:mx-auto"
+          className={cn(
+            'text-foreground prose prose-headings:text-foreground prose-strong:text-primary',
+            'max-w-none prose-img:rounded-lg prose-img:border prose-img:shadow-lg prose-img:mx-auto',
+            'prose-code:px-1 prose-code:py-0.5 prose-code:text-primary prose-code:font-bold  prose-code:after:content-none',
+            'prose-code:rounded-sm prose-code:border prose-code:border-primary prose-code:before:content-none',
+          )}
           dangerouslySetInnerHTML={{__html: content}}
         />
         <div className="flex mt-8 gap-4">

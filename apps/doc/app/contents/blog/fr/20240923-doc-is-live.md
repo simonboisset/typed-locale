@@ -11,7 +11,6 @@ La documentation officielle de `typed-locale` est maintenant disponible. Cela of
 Le site de documentation utilise les technologies suivantes :
 
 - **Remix** : Utilisé pour le rendu côté serveur et l'optimisation des performances.
-- **TypeScript** : La documentation est écrite en TypeScript.
 - **Tailwind CSS avec shadcn/ui** : Utilisé pour le style, offrant un design cohérent dans toute la documentation.
 - **typed-locale** : Implémenté pour l'internationalisation, démontrant son utilisation dans une application pratique.
 
