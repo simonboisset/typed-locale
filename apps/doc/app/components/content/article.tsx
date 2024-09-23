@@ -90,7 +90,7 @@ export const ArticleContent = ({content, toc, title, nextArticle, previousArticl
                     <ChevronLeft className="mr-2 h-4 w-4 transition-transform group-hover:-translate-x-1" />
                     {t(l => l.article.previous)}
                   </CardDescription>
-                  <CardTitle className="text-lg font-semibold mt-2 group-hover:text-primary">
+                  <CardTitle className="text-base sm:text-lg font-semibold mt-2 group-hover:text-primary">
                     {previousArticle.title}
                   </CardTitle>
                 </CardHeader>
@@ -109,7 +109,7 @@ export const ArticleContent = ({content, toc, title, nextArticle, previousArticl
                     {t(l => l.article.next)}
                     <ChevronRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                   </CardDescription>
-                  <CardTitle className="text-lg font-semibold mt-2 text-right group-hover:text-primary">
+                  <CardTitle className=" text-base sm:text-lg font-semibold mt-2 text-right group-hover:text-primary">
                     {nextArticle.title}
                   </CardTitle>
                 </CardHeader>

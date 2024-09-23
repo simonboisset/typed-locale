@@ -2,6 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/inter.ttf') format('truetype');
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/inter-italic.ttf') format('truetype');
+  font-style: italic;
+  font-display: swap;
+}
+
 html,
 body {
   @apply bg-white dark:bg-gray-950;
