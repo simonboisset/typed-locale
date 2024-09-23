@@ -86,7 +86,7 @@ export const getTitle = (doc: string) => {
   return doc.split('\n')[0].replace('# ', '');
 };
 
-const getSlug = (title: string) => {
+export const getSlug = (title: string) => {
   return title
     .toLowerCase()
     .replace(/[^a-z0-9]+/g, '-')

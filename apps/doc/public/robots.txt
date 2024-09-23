@@ -1,0 +1,16 @@
+User-agent: *
+Allow: /
+
+Allow: /$
+Allow: /*/$ 
+Allow: /docs/
+Allow: /docs/*/
+Allow: /blog/
+Allow: /blog/*/
+Allow: /*/docs/
+Allow: /*/docs/*/
+Allow: /*/blog/
+Allow: /*/blog/*/
+
+# Sitemap
+Sitemap: https://typed-locale.vercel.app/sitemap.xml

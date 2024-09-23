@@ -5,7 +5,7 @@ import {getAppUrl} from '../navigation/get-url';
 import {en} from './en';
 import {fr} from './fr';
 
-const blog = {en, fr};
+export const blog = {en, fr};
 
 export const getBlogPosts = (lang: Language): LinkTree[] => {
   return blog[lang]
