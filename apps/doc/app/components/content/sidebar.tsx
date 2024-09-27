@@ -1,8 +1,10 @@
+import {GitHubLogoIcon} from '@radix-ui/react-icons';
 import {Link, useNavigate, useParams} from '@remix-run/react';
 import {Link2, MenuIcon} from 'lucide-react';
 import {LinkTree} from '~/contents/docs/doc.server';
 import {useTranslation} from '~/contents/i18n/translator';
 import {getAppUrl} from '~/contents/navigation/get-url';
+import {GITHUB_URL} from '~/contents/navigation/urls';
 import {useAppConfig} from '~/routes/($lang)';
 import {Accordion, AccordionContent, AccordionItem, AccordionTrigger} from '../ui/accordion';
 import {Button} from '../ui/button';
@@ -42,7 +44,14 @@ export function MobileSidebar({linksTree}: {linksTree?: LinkTree[]}) {
           <SheetTitle className="text-start">Typed Locale</SheetTitle>
         </SheetHeader>
         <div className="py-4 flex flex-col gap-2">
-          <LanguageSelect expand />
+          <div className="flex flex-row gap-2">
+            <LanguageSelect expand />
+            <Button variant="outline" size="icon" aria-label="GitHub" asChild>
+              <Link to={GITHUB_URL}>
+                <GitHubLogoIcon className="h-4 w-4" />
+              </Link>
+            </Button>
+          </div>
           <VersionSelect expand />
           <Button variant="outline" className="w-full justify-start font-normal" asChild>
             <Link to={getAppUrl({type: 'docs', lang, DEFAULT_LANGUAGE, LATEST_VERSION})}>

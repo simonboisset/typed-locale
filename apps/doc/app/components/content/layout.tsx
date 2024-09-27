@@ -1,8 +1,10 @@
+import {GitHubLogoIcon} from '@radix-ui/react-icons';
 import {Link, useParams} from '@remix-run/react';
 import {BookType, Search} from 'lucide-react';
 import {LinkTree} from '~/contents/docs/doc.server';
 import {useTranslation} from '~/contents/i18n/translator';
 import {getAppUrl} from '~/contents/navigation/get-url';
+import {GITHUB_URL} from '~/contents/navigation/urls';
 import {useAppConfig} from '~/routes/($lang)';
 import {DesktopSidebar, MobileSidebar} from '../content/sidebar';
 import {Button} from '../ui/button';
@@ -46,7 +48,7 @@ export const Header = ({linksTree, searchItems}: {linksTree?: LinkTree[]; search
             }
           />
         </div>
-        <div className="hidden md:flex items-center gap-8 ml-20 flex-1">
+        <div className="hidden md:flex items-center gap-4 ml-20 flex-1">
           <Link
             className="hover:text-primary font-semibold"
             to={getAppUrl({
@@ -79,6 +81,11 @@ export const Header = ({linksTree, searchItems}: {linksTree?: LinkTree[]; search
           />
           <VersionSelect />
           <LanguageSelect />
+          <Button variant="outline" size="icon" aria-label="GitHub" asChild>
+            <Link to={GITHUB_URL}>
+              <GitHubLogoIcon className="h-4 w-4" />
+            </Link>
+          </Button>
         </div>
       </div>
     </header>

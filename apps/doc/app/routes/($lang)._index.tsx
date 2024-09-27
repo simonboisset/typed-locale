@@ -7,6 +7,7 @@ import {ScreenshotSection} from '~/components/landing-page/screenshot-section';
 import {DEFAULT_LANGUAGE, getDocs, LATEST_VERSION} from '~/contents/docs/doc.server';
 import {getSearchItems} from '~/contents/docs/search-items.server';
 import {useTranslation} from '~/contents/i18n/translator';
+import {GITHUB_URL} from '~/contents/navigation/urls';
 
 export const loader = async ({params}: LoaderFunctionArgs) => {
   const docs = getDocs({
@@ -32,9 +33,7 @@ export default function Index() {
         <footer className="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t">
           <p className="text-xs text-gray-500 dark:text-gray-400">{t(l => l.landingPage.footer.copyright)}</p>
           <nav className="sm:ml-auto flex gap-4 sm:gap-6">
-            <Link
-              className="text-xs hover:underline underline-offset-4"
-              to="https://github.com/simonboisset/remix-shadcn-docs">
+            <Link className="text-xs hover:underline underline-offset-4" to={GITHUB_URL}>
               {t(l => l.landingPage.footer.github)}
             </Link>
             <Link className="text-xs hover:underline underline-offset-4" to="https://github.com/simonboisset">

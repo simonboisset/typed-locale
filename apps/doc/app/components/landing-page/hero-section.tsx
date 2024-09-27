@@ -1,6 +1,7 @@
 import {Link, useParams} from '@remix-run/react';
 import {useTranslation} from '~/contents/i18n/translator';
 import {getAppUrl} from '~/contents/navigation/get-url';
+import {GITHUB_URL} from '~/contents/navigation/urls';
 import {useAppConfig} from '~/routes/($lang)';
 import {CodeBlock} from '../content/code-block';
 import {Button} from '../ui/button';
@@ -27,7 +28,7 @@ export const HeroSection = () => {
               <Link to={docUrl}>{t(l => l.landingPage.getStarted)}</Link>
             </Button>
             <Button variant="outline" asChild>
-              <Link to="https://github.com/simonboisset/typed-locale">{t(l => l.landingPage.viewOnGithub)}</Link>
+              <Link to={GITHUB_URL}>{t(l => l.landingPage.viewOnGithub)}</Link>
             </Button>
           </div>
           <CodeBlock className="bash w-80 text-start">npm install typed-locale</CodeBlock>
