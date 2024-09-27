@@ -15,6 +15,10 @@ export type PluralConfig<Phrase extends PluralPhrase> = {
   other: Phrase;
 };
 
+/**
+ * @deprecated
+ * Use `select` instead.
+ */
 export const plural = <Phrase extends PluralPhrase>(config: PluralConfig<Phrase>): InferPhrase<Phrase> => {
   return {
     [PLURALIZED_KEY]: config,

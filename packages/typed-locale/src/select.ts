@@ -1,0 +1,54 @@
+import {InferTranslatorPhrase} from './infer';
+import {buildDoubleBracePhrase} from './phrase-builder';
+
+type UnionToString<T extends string> = {
+  [K in T]: Exclude<T, K> extends never ? K : `${K}${UnionToString<Exclude<T, K>>}`;
+}[T];
+
+type Test2 = UnionToString<'X' | 'Y' | 'Z'>; // "XYZ"
+type Test3 = UnionToString<'Hello' | 'World'>; // "HelloWorld"
+type Test4 = UnionToString<'1' | '2' | '3'>; // "123"
+
+type ValueOf<Config extends Record<string, string>> = Config[keyof Config];
+type InferConfigPhrase<
+  T extends string,
+  Config extends {
+    [key: string]: string;
+    other: string;
+  },
+> = `{{${T}}}${string}${UnionToString<ValueOf<Config>>}`;
+
+export const select = <
+  T extends string,
+  Config extends {
+    [key: string]: string;
+    other: string;
+  },
+>(
+  variable: T,
+  config: Config,
+): InferConfigPhrase<T, Config> => {
+  return {
+    [SELECT_KEY]: {variable, config},
+  } as unknown as InferConfigPhrase<T, Config>;
+};
+
+export const SELECT_KEY = 'select-key';
+
+export const getSelectPhraseBuilder = <
+  T extends string,
+  Config extends {
+    [key: string]: string;
+    other: string;
+  },
+>(selectKey: {
+  variable: T;
+  config: Config;
+}): InferTranslatorPhrase<InferConfigPhrase<T, Config>> => {
+  // @ts-expect-error
+  return (variables: Record<string, string | number>) => {
+    const value = variables[selectKey.variable];
+    const selectedPhrase = selectKey.config[value] || selectKey.config['other'];
+    return buildDoubleBracePhrase(selectedPhrase, variables);
+  };
+};

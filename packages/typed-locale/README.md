@@ -177,28 +177,91 @@ const translator = createTranslatorFromDictionary({dictionary, locale: 'fr', def
 console.log(translator(t => t.anotherKey)); // 'Another'
 ```
 
-## Pluralization
+## Select
 
-You can use pluralization by using the `plural` function in your translation object.
+The `select` function is a tool for handling pluralization and conditional text selection in translations. It allows you to define different text variants based on a specific variable's value.
+
+### Basic Syntax
 
 ```typescript
-import {plural} from 'typed-locale';
-
-export const en = {
-  youHaveMessages: plural({
-    none: 'You have no messages',
-    one: 'You have 1 message',
-    other: 'You have {{count}} messages',
-  }),
-} as const;
-
-const translator = createTranslator(en);
-
-const text = translator(t => t.youHaveMessages({count: 3}));
-console.log(text); // 'You have 3 messages'
+select(key, options);
 ```
 
-> Be careful that the pluralization uses the `count` name as a reserved variable name.
+- `key`: The variable name to base the selection on (e.g., 'count', 'fruit')
+- `options`: An object containing the different text variants
+
+### Examples
+
+#### Pluralization
+
+```typescript
+const messages = {
+  youHaveMessages: select('count', {
+    0: 'You have no messages',
+    1: 'You have 1 message',
+    other: 'You have {{count}} messages',
+  } as const),
+};
+```
+
+> Don't forget to use `as const` for the options object.
+> `other` is a required key for the default translation.
+> In this example, the text changes based on the `count` value:
+
+- If `count` is 0, it returns "You have no messages"
+- If `count` is 1, it returns "You have 1 message"
+- For any other value, it returns "You have {{count}} messages", where `{{count}}` will be replaced with the actual number
+
+#### Combining with Other Variables
+
+```typescript
+const greetings = {
+  helloNameYouHaveMessages: select('count', {
+    0: 'Hello, {{name}}. You have no messages',
+    1: 'Hello, {{name}}. You have 1 message',
+    other: 'Hello, {{name}}. You have {{count}} messages',
+  } as const),
+};
+```
+
+This example combines the `count` selection with another variable `{{name}}`, allowing for more complex translations.
+
+#### Non-numeric Selection
+
+```typescript
+const preferences = {
+  fruitPreference: select('fruit', {
+    apple: 'I like apples',
+    banana: 'I enjoy bananas',
+    other: 'I prefer {{fruit}}',
+  }),
+};
+```
+
+The `select` function can also be used with non-numeric keys. In this case, it selects based on the `fruit` value:
+
+- If `fruit` is "apple", it returns "I like apples"
+- If `fruit` is "banana", it returns "I enjoy bananas"
+- For any other fruit, it returns "I prefer {{fruit}}", where `{{fruit}}` will be replaced with the actual fruit name
+
+### Usage with Translators
+
+When used with a translator function, you can easily generate the appropriate text:
+
+```typescript
+const translateEn = createTranslator(messages);
+
+translateEn(l => l.youHaveMessages({count: 0})); // "You have no messages"
+translateEn(l => l.youHaveMessages({count: 1})); // "You have 1 message"
+translateEn(l => l.youHaveMessages({count: 2})); // "You have 2 messages"
+
+translateEn(l => l.helloNameYouHaveMessages({count: 1, name: 'Jo'})); // "Hello, Jo. You have 1 message"
+
+translateEn(l => l.fruitPreference({fruit: 'apple'})); // "I like apples"
+translateEn(l => l.fruitPreference({fruit: 'orange'})); // "I prefer orange"
+```
+
+The `select` function provides a flexible way to handle various translation scenarios, from simple pluralization to more complex conditional text selection.
 
 ## Scoped translation
 
@@ -261,22 +324,6 @@ console.log(translatedTextWithName); // 'Hello, World'
 ### Caching
 
 The lazy translator automatically caches loaded translations, so subsequent requests for the same key will not trigger additional lazy loading.
-
-## Roadmap
-
-Here is the roadmap for the library.
-
-- [x] Type-safe declaration
-- [x] Basic translation
-- [x] Variable in translation
-- [x] Strict type checking for variables
-- [x] Default translation for missing key
-- [x] Pluralization
-- [x] Scoped translation with nested object
-- [x] Improved type inference and auto-completion for variables
-- [x] Support for lazy loading
-
-Feel free to open an issue or pull request if you have any idea or suggestion.
 
 ## Contribution guide
 

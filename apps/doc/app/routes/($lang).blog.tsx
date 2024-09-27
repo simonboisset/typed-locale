@@ -1,19 +1,25 @@
 import {LoaderFunctionArgs} from '@remix-run/node';
 import {Outlet, useLoaderData} from '@remix-run/react';
-import {AppLayout} from '~/components/content/layout';
+import {ContentLayout} from '~/components/content/layout';
 import {requireBlogPost} from '~/contents/blog/blog.server';
+import {DEFAULT_LANGUAGE, getDocs, LATEST_VERSION} from '~/contents/docs/doc.server';
+import {getSearchItems} from '~/contents/docs/search-items.server';
 
 export const loader = async ({params}: LoaderFunctionArgs) => {
   const {posts} = requireBlogPost(params);
-
-  return posts;
+  const docs = getDocs({
+    version: LATEST_VERSION,
+    language: params.lang || DEFAULT_LANGUAGE,
+  });
+  const searchItems = getSearchItems(docs);
+  return {posts, searchItems};
 };
 
 export default function Index() {
-  const linksTree = useLoaderData<typeof loader>();
+  const {posts, searchItems} = useLoaderData<typeof loader>();
   return (
-    <AppLayout linksTree={linksTree}>
+    <ContentLayout linksTree={posts} searchItems={searchItems}>
       <Outlet />
-    </AppLayout>
+    </ContentLayout>
   );
 }

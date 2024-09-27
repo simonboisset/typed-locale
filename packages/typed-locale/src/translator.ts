@@ -1,6 +1,7 @@
 import {InferTranslationGenerator} from './infer';
 import {getPhraseBuilder} from './phrase-builder';
 import {getPluralizedPhraseBuilder, PLURALIZED_KEY} from './plural';
+import {getSelectPhraseBuilder, SELECT_KEY} from './select';
 
 export type Translator<Translation extends Record<string, unknown>> = (
   getPhrase: (translation: InferTranslationGenerator<Translation>) => string,
@@ -30,6 +31,9 @@ export const getTranslationGenerator = <Translation extends Record<string, unkno
       if (nestedKey === PLURALIZED_KEY) {
         // @ts-expect-error
         generator[key] = getPluralizedPhraseBuilder(value[PLURALIZED_KEY] as Translation);
+      } else if (nestedKey === SELECT_KEY) {
+        // @ts-expect-error
+        generator[key] = getSelectPhraseBuilder(value[SELECT_KEY] as Translation);
       } else {
         // @ts-expect-error
         generator[key] = getTranslationGenerator(value as Translation);

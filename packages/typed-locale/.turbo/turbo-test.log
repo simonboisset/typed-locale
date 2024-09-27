@@ -7,26 +7,28 @@
 
 [7m[1m[36m RUN [39m[22m[27m [36mv2.1.1[39m [90m/Users/simonboisset/Documents/GitHub/dictionary/packages/typed-locale[39m
 
-[?25l [32m✓[39m [2msrc/[22mtranslator-from-dictionary[2m.test.ts[22m[2m (10)[22m
- [32m✓[39m [2msrc/[22mtranslator[2m.test.ts[22m[2m (8)[22m
+[?25l [90m·[39m [2msrc/[22mtranslator-from-dictionary[2m.test.ts[22m[2m (10)[22m
+ [32m✓[39m [2msrc/[22mphrase-builder[2m.test.ts[22m[2m (10)[22m
+ [90m·[39m [2msrc/[22mplural[2m.test.ts[22m[2m (2)[22m
+[?25l[2K[1A[2K[1A[2K[1A[2K[G [32m✓[39m [2msrc/[22mtranslator-from-dictionary[2m.test.ts[22m[2m (10)[22m
+ [32m✓[39m [2msrc/[22mphrase-builder[2m.test.ts[22m[2m (10)[22m
+ [32m✓[39m [2msrc/[22mplural[2m.test.ts[22m[2m (2)[22m
+[?25l[2K[1A[2K[1A[2K[1A[2K[G [32m✓[39m [2msrc/[22mtranslator-from-dictionary[2m.test.ts[22m[2m (10)[22m
  [90m·[39m [2msrc/[22mtranslator-scope[2m.test.ts[22m[2m (9)[22m
- [32m✓[39m [2msrc/[22mplural[2m.test.ts[22m[2m (2)[22m
  [32m✓[39m [2msrc/[22mphrase-builder[2m.test.ts[22m[2m (10)[22m
- [32m✓[39m [2msrc/[22mdeep[2m.test.ts[22m[2m (7)[22m
-[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [32m✓[39m [2msrc/[22mtranslator-from-dictionary[2m.test.ts[22m[2m (10)[22m
- [32m✓[39m [2msrc/[22mtranslator[2m.test.ts[22m[2m (8)[22m
+ [32m✓[39m [2msrc/[22mplural[2m.test.ts[22m[2m (2)[22m
+[?25l[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [32m✓[39m [2msrc/[22mtranslator-from-dictionary[2m.test.ts[22m[2m (10)[22m
+ [90m·[39m [2msrc/[22mselect[2m.test.ts[22m[2m (2)[22m
  [32m✓[39m [2msrc/[22mtranslator-scope[2m.test.ts[22m[2m (9)[22m
- [32m✓[39m [2msrc/[22mplural[2m.test.ts[22m[2m (2)[22m
  [32m✓[39m [2msrc/[22mphrase-builder[2m.test.ts[22m[2m (10)[22m
- [32m✓[39m [2msrc/[22mdeep[2m.test.ts[22m[2m (7)[22m
-[?25l[?25l[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [90m·[39m [2msrc/[22mlazy-translator[2m.test.ts[22m[2m (8)[22m
+ [32m✓[39m [2msrc/[22mplural[2m.test.ts[22m[2m (2)[22m
+[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [90m·[39m [2msrc/[22mlazy-translator[2m.test.ts[22m[2m (8)[22m
  [32m✓[39m [2msrc/[22mtranslator-from-dictionary[2m.test.ts[22m[2m (10)[22m
- [32m✓[39m [2msrc/[22mtranslator[2m.test.ts[22m[2m (8)[22m
+ [32m✓[39m [2msrc/[22mselect[2m.test.ts[22m[2m (2)[22m
  [32m✓[39m [2msrc/[22mtranslator-scope[2m.test.ts[22m[2m (9)[22m
- [32m✓[39m [2msrc/[22mplural[2m.test.ts[22m[2m (2)[22m
  [32m✓[39m [2msrc/[22mphrase-builder[2m.test.ts[22m[2m (10)[22m
- [32m✓[39m [2msrc/[22mdeep[2m.test.ts[22m[2m (7)[22m
-[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [33m❯[39m [2msrc/[22mlazy-translator[2m.test.ts[22m[2m (8)[22m
+ [32m✓[39m [2msrc/[22mplural[2m.test.ts[22m[2m (2)[22m
+[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [33m❯[39m [2msrc/[22mlazy-translator[2m.test.ts[22m[2m (8)[22m
    [33m⠙[39m Should load and return translation
    [90m·[39m Should cache keys and avoid unnecessary loading
    [90m·[39m Should handle nested keys
@@ -36,11 +38,11 @@
    [90m·[39m Should handle plural translations
    [90m·[39m Should cache plural translations
  [32m✓[39m [2msrc/[22mtranslator-from-dictionary[2m.test.ts[22m[2m (10)[22m
- [32m✓[39m [2msrc/[22mtranslator[2m.test.ts[22m[2m (8)[22m
+ [90m·[39m [2msrc/[22mtranslator[2m.test.ts[22m[2m (8)[22m
+ [32m✓[39m [2msrc/[22mselect[2m.test.ts[22m[2m (2)[22m
  [32m✓[39m [2msrc/[22mtranslator-scope[2m.test.ts[22m[2m (9)[22m
- [32m✓[39m [2msrc/[22mplural[2m.test.ts[22m[2m (2)[22m
  [32m✓[39m [2msrc/[22mphrase-builder[2m.test.ts[22m[2m (10)[22m
- [32m✓[39m [2msrc/[22mdeep[2m.test.ts[22m[2m (7)[22m
+ [32m✓[39m [2msrc/[22mplural[2m.test.ts[22m[2m (2)[22m
 [?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [33m❯[39m [2msrc/[22mlazy-translator[2m.test.ts[22m[2m (8)[22m
    [33m⠹[39m Should load and return translation
    [90m·[39m Should cache keys and avoid unnecessary loading
@@ -52,10 +54,10 @@
    [90m·[39m Should cache plural translations
  [32m✓[39m [2msrc/[22mtranslator-from-dictionary[2m.test.ts[22m[2m (10)[22m
  [32m✓[39m [2msrc/[22mtranslator[2m.test.ts[22m[2m (8)[22m
+ [32m✓[39m [2msrc/[22mselect[2m.test.ts[22m[2m (2)[22m
  [32m✓[39m [2msrc/[22mtranslator-scope[2m.test.ts[22m[2m (9)[22m
- [32m✓[39m [2msrc/[22mplural[2m.test.ts[22m[2m (2)[22m
  [32m✓[39m [2msrc/[22mphrase-builder[2m.test.ts[22m[2m (10)[22m
- [32m✓[39m [2msrc/[22mdeep[2m.test.ts[22m[2m (7)[22m
+ [32m✓[39m [2msrc/[22mplural[2m.test.ts[22m[2m (2)[22m
 [?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [33m❯[39m [2msrc/[22mlazy-translator[2m.test.ts[22m[2m (8)[22m
    [33m⠸[39m Should load and return translation
    [90m·[39m Should cache keys and avoid unnecessary loading
@@ -67,10 +69,10 @@
    [90m·[39m Should cache plural translations
  [32m✓[39m [2msrc/[22mtranslator-from-dictionary[2m.test.ts[22m[2m (10)[22m
  [32m✓[39m [2msrc/[22mtranslator[2m.test.ts[22m[2m (8)[22m
+ [32m✓[39m [2msrc/[22mselect[2m.test.ts[22m[2m (2)[22m
  [32m✓[39m [2msrc/[22mtranslator-scope[2m.test.ts[22m[2m (9)[22m
- [32m✓[39m [2msrc/[22mplural[2m.test.ts[22m[2m (2)[22m
  [32m✓[39m [2msrc/[22mphrase-builder[2m.test.ts[22m[2m (10)[22m
- [32m✓[39m [2msrc/[22mdeep[2m.test.ts[22m[2m (7)[22m
+ [32m✓[39m [2msrc/[22mplural[2m.test.ts[22m[2m (2)[22m
 [?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [33m❯[39m [2msrc/[22mlazy-translator[2m.test.ts[22m[2m (8)[22m
    [33m⠼[39m Should load and return translation
    [90m·[39m Should cache keys and avoid unnecessary loading
@@ -82,10 +84,10 @@
    [90m·[39m Should cache plural translations
  [32m✓[39m [2msrc/[22mtranslator-from-dictionary[2m.test.ts[22m[2m (10)[22m
  [32m✓[39m [2msrc/[22mtranslator[2m.test.ts[22m[2m (8)[22m
+ [32m✓[39m [2msrc/[22mselect[2m.test.ts[22m[2m (2)[22m
  [32m✓[39m [2msrc/[22mtranslator-scope[2m.test.ts[22m[2m (9)[22m
- [32m✓[39m [2msrc/[22mplural[2m.test.ts[22m[2m (2)[22m
  [32m✓[39m [2msrc/[22mphrase-builder[2m.test.ts[22m[2m (10)[22m
- [32m✓[39m [2msrc/[22mdeep[2m.test.ts[22m[2m (7)[22m
+ [32m✓[39m [2msrc/[22mplural[2m.test.ts[22m[2m (2)[22m
 [?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [33m❯[39m [2msrc/[22mlazy-translator[2m.test.ts[22m[2m (8)[22m
    [33m⠴[39m Should load and return translation
    [90m·[39m Should cache keys and avoid unnecessary loading
@@ -97,10 +99,10 @@
    [90m·[39m Should cache plural translations
  [32m✓[39m [2msrc/[22mtranslator-from-dictionary[2m.test.ts[22m[2m (10)[22m
  [32m✓[39m [2msrc/[22mtranslator[2m.test.ts[22m[2m (8)[22m
+ [32m✓[39m [2msrc/[22mselect[2m.test.ts[22m[2m (2)[22m
  [32m✓[39m [2msrc/[22mtranslator-scope[2m.test.ts[22m[2m (9)[22m
- [32m✓[39m [2msrc/[22mplural[2m.test.ts[22m[2m (2)[22m
  [32m✓[39m [2msrc/[22mphrase-builder[2m.test.ts[22m[2m (10)[22m
- [32m✓[39m [2msrc/[22mdeep[2m.test.ts[22m[2m (7)[22m
+ [32m✓[39m [2msrc/[22mplural[2m.test.ts[22m[2m (2)[22m
 [?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [33m❯[39m [2msrc/[22mlazy-translator[2m.test.ts[22m[2m (8)[22m
    [33m⠦[39m Should load and return translation
    [90m·[39m Should cache keys and avoid unnecessary loading
@@ -112,10 +114,10 @@
    [90m·[39m Should cache plural translations
  [32m✓[39m [2msrc/[22mtranslator-from-dictionary[2m.test.ts[22m[2m (10)[22m
  [32m✓[39m [2msrc/[22mtranslator[2m.test.ts[22m[2m (8)[22m
+ [32m✓[39m [2msrc/[22mselect[2m.test.ts[22m[2m (2)[22m
  [32m✓[39m [2msrc/[22mtranslator-scope[2m.test.ts[22m[2m (9)[22m
- [32m✓[39m [2msrc/[22mplural[2m.test.ts[22m[2m (2)[22m
  [32m✓[39m [2msrc/[22mphrase-builder[2m.test.ts[22m[2m (10)[22m
- [32m✓[39m [2msrc/[22mdeep[2m.test.ts[22m[2m (7)[22m
+ [32m✓[39m [2msrc/[22mplural[2m.test.ts[22m[2m (2)[22m
 [?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [33m❯[39m [2msrc/[22mlazy-translator[2m.test.ts[22m[2m (8)[22m
    [32m✓[39m Should load and return translation
    [33m⠙[39m Should cache keys and avoid unnecessary loading
@@ -127,10 +129,10 @@
    [90m·[39m Should cache plural translations
  [32m✓[39m [2msrc/[22mtranslator-from-dictionary[2m.test.ts[22m[2m (10)[22m
  [32m✓[39m [2msrc/[22mtranslator[2m.test.ts[22m[2m (8)[22m
+ [32m✓[39m [2msrc/[22mselect[2m.test.ts[22m[2m (2)[22m
  [32m✓[39m [2msrc/[22mtranslator-scope[2m.test.ts[22m[2m (9)[22m
- [32m✓[39m [2msrc/[22mplural[2m.test.ts[22m[2m (2)[22m
  [32m✓[39m [2msrc/[22mphrase-builder[2m.test.ts[22m[2m (10)[22m
- [32m✓[39m [2msrc/[22mdeep[2m.test.ts[22m[2m (7)[22m
+ [32m✓[39m [2msrc/[22mplural[2m.test.ts[22m[2m (2)[22m
 [?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [33m❯[39m [2msrc/[22mlazy-translator[2m.test.ts[22m[2m (8)[22m
    [32m✓[39m Should load and return translation
    [33m⠹[39m Should cache keys and avoid unnecessary loading
@@ -142,85 +144,10 @@
    [90m·[39m Should cache plural translations
  [32m✓[39m [2msrc/[22mtranslator-from-dictionary[2m.test.ts[22m[2m (10)[22m
  [32m✓[39m [2msrc/[22mtranslator[2m.test.ts[22m[2m (8)[22m
+ [32m✓[39m [2msrc/[22mselect[2m.test.ts[22m[2m (2)[22m
  [32m✓[39m [2msrc/[22mtranslator-scope[2m.test.ts[22m[2m (9)[22m
- [32m✓[39m [2msrc/[22mplural[2m.test.ts[22m[2m (2)[22m
  [32m✓[39m [2msrc/[22mphrase-builder[2m.test.ts[22m[2m (10)[22m
- [32m✓[39m [2msrc/[22mdeep[2m.test.ts[22m[2m (7)[22m
-[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [33m❯[39m [2msrc/[22mlazy-translator[2m.test.ts[22m[2m (8)[22m
-   [32m✓[39m Should load and return translation
-   [33m⠸[39m Should cache keys and avoid unnecessary loading
-   [90m·[39m Should handle nested keys
-   [90m·[39m Should handle variables
-   [90m·[39m Should use initial translations
-   [90m·[39m Should load missing keys
-   [90m·[39m Should handle plural translations
-   [90m·[39m Should cache plural translations
- [32m✓[39m [2msrc/[22mtranslator-from-dictionary[2m.test.ts[22m[2m (10)[22m
- [32m✓[39m [2msrc/[22mtranslator[2m.test.ts[22m[2m (8)[22m
- [32m✓[39m [2msrc/[22mtranslator-scope[2m.test.ts[22m[2m (9)[22m
  [32m✓[39m [2msrc/[22mplural[2m.test.ts[22m[2m (2)[22m
- [32m✓[39m [2msrc/[22mphrase-builder[2m.test.ts[22m[2m (10)[22m
- [32m✓[39m [2msrc/[22mdeep[2m.test.ts[22m[2m (7)[22m
-[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [33m❯[39m [2msrc/[22mlazy-translator[2m.test.ts[22m[2m (8)[22m
-   [32m✓[39m Should load and return translation
-   [33m⠼[39m Should cache keys and avoid unnecessary loading
-   [90m·[39m Should handle nested keys
-   [90m·[39m Should handle variables
-   [90m·[39m Should use initial translations
-   [90m·[39m Should load missing keys
-   [90m·[39m Should handle plural translations
-   [90m·[39m Should cache plural translations
- [32m✓[39m [2msrc/[22mtranslator-from-dictionary[2m.test.ts[22m[2m (10)[22m
- [32m✓[39m [2msrc/[22mtranslator[2m.test.ts[22m[2m (8)[22m
- [32m✓[39m [2msrc/[22mtranslator-scope[2m.test.ts[22m[2m (9)[22m
- [32m✓[39m [2msrc/[22mplural[2m.test.ts[22m[2m (2)[22m
- [32m✓[39m [2msrc/[22mphrase-builder[2m.test.ts[22m[2m (10)[22m
- [32m✓[39m [2msrc/[22mdeep[2m.test.ts[22m[2m (7)[22m
-[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [33m❯[39m [2msrc/[22mlazy-translator[2m.test.ts[22m[2m (8)[22m
-   [32m✓[39m Should load and return translation
-   [33m⠴[39m Should cache keys and avoid unnecessary loading
-   [90m·[39m Should handle nested keys
-   [90m·[39m Should handle variables
-   [90m·[39m Should use initial translations
-   [90m·[39m Should load missing keys
-   [90m·[39m Should handle plural translations
-   [90m·[39m Should cache plural translations
- [32m✓[39m [2msrc/[22mtranslator-from-dictionary[2m.test.ts[22m[2m (10)[22m
- [32m✓[39m [2msrc/[22mtranslator[2m.test.ts[22m[2m (8)[22m
- [32m✓[39m [2msrc/[22mtranslator-scope[2m.test.ts[22m[2m (9)[22m
- [32m✓[39m [2msrc/[22mplural[2m.test.ts[22m[2m (2)[22m
- [32m✓[39m [2msrc/[22mphrase-builder[2m.test.ts[22m[2m (10)[22m
- [32m✓[39m [2msrc/[22mdeep[2m.test.ts[22m[2m (7)[22m
-[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [33m❯[39m [2msrc/[22mlazy-translator[2m.test.ts[22m[2m (8)[22m
-   [32m✓[39m Should load and return translation
-   [33m⠦[39m Should cache keys and avoid unnecessary loading
-   [90m·[39m Should handle nested keys
-   [90m·[39m Should handle variables
-   [90m·[39m Should use initial translations
-   [90m·[39m Should load missing keys
-   [90m·[39m Should handle plural translations
-   [90m·[39m Should cache plural translations
- [32m✓[39m [2msrc/[22mtranslator-from-dictionary[2m.test.ts[22m[2m (10)[22m
- [32m✓[39m [2msrc/[22mtranslator[2m.test.ts[22m[2m (8)[22m
- [32m✓[39m [2msrc/[22mtranslator-scope[2m.test.ts[22m[2m (9)[22m
- [32m✓[39m [2msrc/[22mplural[2m.test.ts[22m[2m (2)[22m
- [32m✓[39m [2msrc/[22mphrase-builder[2m.test.ts[22m[2m (10)[22m
- [32m✓[39m [2msrc/[22mdeep[2m.test.ts[22m[2m (7)[22m
-[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [33m❯[39m [2msrc/[22mlazy-translator[2m.test.ts[22m[2m (8)[22m
-   [32m✓[39m Should load and return translation
-   [33m⠧[39m Should cache keys and avoid unnecessary loading
-   [90m·[39m Should handle nested keys
-   [90m·[39m Should handle variables
-   [90m·[39m Should use initial translations
-   [90m·[39m Should load missing keys
-   [90m·[39m Should handle plural translations
-   [90m·[39m Should cache plural translations
- [32m✓[39m [2msrc/[22mtranslator-from-dictionary[2m.test.ts[22m[2m (10)[22m
- [32m✓[39m [2msrc/[22mtranslator[2m.test.ts[22m[2m (8)[22m
- [32m✓[39m [2msrc/[22mtranslator-scope[2m.test.ts[22m[2m (9)[22m
- [32m✓[39m [2msrc/[22mplural[2m.test.ts[22m[2m (2)[22m
- [32m✓[39m [2msrc/[22mphrase-builder[2m.test.ts[22m[2m (10)[22m
- [32m✓[39m [2msrc/[22mdeep[2m.test.ts[22m[2m (7)[22m
 [?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [33m❯[39m [2msrc/[22mlazy-translator[2m.test.ts[22m[2m (8)[22m
    [32m✓[39m Should load and return translation
    [32m✓[39m Should cache keys and avoid unnecessary loading
@@ -232,12 +159,11 @@
    [90m·[39m Should cache plural translations
  [32m✓[39m [2msrc/[22mtranslator-from-dictionary[2m.test.ts[22m[2m (10)[22m
  [32m✓[39m [2msrc/[22mtranslator[2m.test.ts[22m[2m (8)[22m
+ [32m✓[39m [2msrc/[22mselect[2m.test.ts[22m[2m (2)[22m
  [32m✓[39m [2msrc/[22mtranslator-scope[2m.test.ts[22m[2m (9)[22m
- [32m✓[39m [2msrc/[22mplural[2m.test.ts[22m[2m (2)[22m
  [32m✓[39m [2msrc/[22mphrase-builder[2m.test.ts[22m[2m (10)[22m
- [32m✓[39m [2msrc/[22mdeep[2m.test.ts[22m[2m (7)[22m
- [32m✓[39m [2msrc/[22mextract-path[2m.test.ts[22m[2m (4)[22m
-[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [33m❯[39m [2msrc/[22mlazy-translator[2m.test.ts[22m[2m (8)[22m
+ [32m✓[39m [2msrc/[22mplural[2m.test.ts[22m[2m (2)[22m
+[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [33m❯[39m [2msrc/[22mlazy-translator[2m.test.ts[22m[2m (8)[22m
    [32m✓[39m Should load and return translation
    [32m✓[39m Should cache keys and avoid unnecessary loading
    [33m⠹[39m Should handle nested keys
@@ -248,12 +174,11 @@
    [90m·[39m Should cache plural translations
  [32m✓[39m [2msrc/[22mtranslator-from-dictionary[2m.test.ts[22m[2m (10)[22m
  [32m✓[39m [2msrc/[22mtranslator[2m.test.ts[22m[2m (8)[22m
+ [32m✓[39m [2msrc/[22mselect[2m.test.ts[22m[2m (2)[22m
  [32m✓[39m [2msrc/[22mtranslator-scope[2m.test.ts[22m[2m (9)[22m
- [32m✓[39m [2msrc/[22mplural[2m.test.ts[22m[2m (2)[22m
  [32m✓[39m [2msrc/[22mphrase-builder[2m.test.ts[22m[2m (10)[22m
- [32m✓[39m [2msrc/[22mdeep[2m.test.ts[22m[2m (7)[22m
- [32m✓[39m [2msrc/[22mextract-path[2m.test.ts[22m[2m (4)[22m
-[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [33m❯[39m [2msrc/[22mlazy-translator[2m.test.ts[22m[2m (8)[22m
+ [32m✓[39m [2msrc/[22mplural[2m.test.ts[22m[2m (2)[22m
+[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [33m❯[39m [2msrc/[22mlazy-translator[2m.test.ts[22m[2m (8)[22m
    [32m✓[39m Should load and return translation
    [32m✓[39m Should cache keys and avoid unnecessary loading
    [33m⠸[39m Should handle nested keys
@@ -264,12 +189,11 @@
    [90m·[39m Should cache plural translations
  [32m✓[39m [2msrc/[22mtranslator-from-dictionary[2m.test.ts[22m[2m (10)[22m
  [32m✓[39m [2msrc/[22mtranslator[2m.test.ts[22m[2m (8)[22m
+ [32m✓[39m [2msrc/[22mselect[2m.test.ts[22m[2m (2)[22m
  [32m✓[39m [2msrc/[22mtranslator-scope[2m.test.ts[22m[2m (9)[22m
- [32m✓[39m [2msrc/[22mplural[2m.test.ts[22m[2m (2)[22m
  [32m✓[39m [2msrc/[22mphrase-builder[2m.test.ts[22m[2m (10)[22m
- [32m✓[39m [2msrc/[22mdeep[2m.test.ts[22m[2m (7)[22m
- [32m✓[39m [2msrc/[22mextract-path[2m.test.ts[22m[2m (4)[22m
-[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [33m❯[39m [2msrc/[22mlazy-translator[2m.test.ts[22m[2m (8)[22m
+ [32m✓[39m [2msrc/[22mplural[2m.test.ts[22m[2m (2)[22m
+[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [33m❯[39m [2msrc/[22mlazy-translator[2m.test.ts[22m[2m (8)[22m
    [32m✓[39m Should load and return translation
    [32m✓[39m Should cache keys and avoid unnecessary loading
    [33m⠼[39m Should handle nested keys
@@ -280,12 +204,11 @@
    [90m·[39m Should cache plural translations
  [32m✓[39m [2msrc/[22mtranslator-from-dictionary[2m.test.ts[22m[2m (10)[22m
  [32m✓[39m [2msrc/[22mtranslator[2m.test.ts[22m[2m (8)[22m
+ [32m✓[39m [2msrc/[22mselect[2m.test.ts[22m[2m (2)[22m
  [32m✓[39m [2msrc/[22mtranslator-scope[2m.test.ts[22m[2m (9)[22m
- [32m✓[39m [2msrc/[22mplural[2m.test.ts[22m[2m (2)[22m
  [32m✓[39m [2msrc/[22mphrase-builder[2m.test.ts[22m[2m (10)[22m
- [32m✓[39m [2msrc/[22mdeep[2m.test.ts[22m[2m (7)[22m
- [32m✓[39m [2msrc/[22mextract-path[2m.test.ts[22m[2m (4)[22m
-[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [33m❯[39m [2msrc/[22mlazy-translator[2m.test.ts[22m[2m (8)[22m
+ [32m✓[39m [2msrc/[22mplural[2m.test.ts[22m[2m (2)[22m
+[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [33m❯[39m [2msrc/[22mlazy-translator[2m.test.ts[22m[2m (8)[22m
    [32m✓[39m Should load and return translation
    [32m✓[39m Should cache keys and avoid unnecessary loading
    [33m⠴[39m Should handle nested keys
@@ -296,28 +219,11 @@
    [90m·[39m Should cache plural translations
  [32m✓[39m [2msrc/[22mtranslator-from-dictionary[2m.test.ts[22m[2m (10)[22m
  [32m✓[39m [2msrc/[22mtranslator[2m.test.ts[22m[2m (8)[22m
+ [32m✓[39m [2msrc/[22mselect[2m.test.ts[22m[2m (2)[22m
  [32m✓[39m [2msrc/[22mtranslator-scope[2m.test.ts[22m[2m (9)[22m
- [32m✓[39m [2msrc/[22mplural[2m.test.ts[22m[2m (2)[22m
  [32m✓[39m [2msrc/[22mphrase-builder[2m.test.ts[22m[2m (10)[22m
- [32m✓[39m [2msrc/[22mdeep[2m.test.ts[22m[2m (7)[22m
- [32m✓[39m [2msrc/[22mextract-path[2m.test.ts[22m[2m (4)[22m
-[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [33m❯[39m [2msrc/[22mlazy-translator[2m.test.ts[22m[2m (8)[22m
-   [32m✓[39m Should load and return translation
-   [32m✓[39m Should cache keys and avoid unnecessary loading
-   [33m⠦[39m Should handle nested keys
-   [90m·[39m Should handle variables
-   [90m·[39m Should use initial translations
-   [90m·[39m Should load missing keys
-   [90m·[39m Should handle plural translations
-   [90m·[39m Should cache plural translations
- [32m✓[39m [2msrc/[22mtranslator-from-dictionary[2m.test.ts[22m[2m (10)[22m
- [32m✓[39m [2msrc/[22mtranslator[2m.test.ts[22m[2m (8)[22m
- [32m✓[39m [2msrc/[22mtranslator-scope[2m.test.ts[22m[2m (9)[22m
  [32m✓[39m [2msrc/[22mplural[2m.test.ts[22m[2m (2)[22m
- [32m✓[39m [2msrc/[22mphrase-builder[2m.test.ts[22m[2m (10)[22m
- [32m✓[39m [2msrc/[22mdeep[2m.test.ts[22m[2m (7)[22m
- [32m✓[39m [2msrc/[22mextract-path[2m.test.ts[22m[2m (4)[22m
-[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [33m❯[39m [2msrc/[22mlazy-translator[2m.test.ts[22m[2m (8)[22m
+[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [33m❯[39m [2msrc/[22mlazy-translator[2m.test.ts[22m[2m (8)[22m
    [32m✓[39m Should load and return translation
    [32m✓[39m Should cache keys and avoid unnecessary loading
    [32m✓[39m Should handle nested keys
@@ -328,12 +234,11 @@
    [90m·[39m Should cache plural translations
  [32m✓[39m [2msrc/[22mtranslator-from-dictionary[2m.test.ts[22m[2m (10)[22m
  [32m✓[39m [2msrc/[22mtranslator[2m.test.ts[22m[2m (8)[22m
+ [32m✓[39m [2msrc/[22mselect[2m.test.ts[22m[2m (2)[22m
  [32m✓[39m [2msrc/[22mtranslator-scope[2m.test.ts[22m[2m (9)[22m
- [32m✓[39m [2msrc/[22mplural[2m.test.ts[22m[2m (2)[22m
  [32m✓[39m [2msrc/[22mphrase-builder[2m.test.ts[22m[2m (10)[22m
- [32m✓[39m [2msrc/[22mdeep[2m.test.ts[22m[2m (7)[22m
- [32m✓[39m [2msrc/[22mextract-path[2m.test.ts[22m[2m (4)[22m
-[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [33m❯[39m [2msrc/[22mlazy-translator[2m.test.ts[22m[2m (8)[22m
+ [32m✓[39m [2msrc/[22mplural[2m.test.ts[22m[2m (2)[22m
+[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [33m❯[39m [2msrc/[22mlazy-translator[2m.test.ts[22m[2m (8)[22m
    [32m✓[39m Should load and return translation
    [32m✓[39m Should cache keys and avoid unnecessary loading
    [32m✓[39m Should handle nested keys
@@ -344,12 +249,11 @@
    [90m·[39m Should cache plural translations
  [32m✓[39m [2msrc/[22mtranslator-from-dictionary[2m.test.ts[22m[2m (10)[22m
  [32m✓[39m [2msrc/[22mtranslator[2m.test.ts[22m[2m (8)[22m
+ [32m✓[39m [2msrc/[22mselect[2m.test.ts[22m[2m (2)[22m
  [32m✓[39m [2msrc/[22mtranslator-scope[2m.test.ts[22m[2m (9)[22m
- [32m✓[39m [2msrc/[22mplural[2m.test.ts[22m[2m (2)[22m
  [32m✓[39m [2msrc/[22mphrase-builder[2m.test.ts[22m[2m (10)[22m
- [32m✓[39m [2msrc/[22mdeep[2m.test.ts[22m[2m (7)[22m
- [32m✓[39m [2msrc/[22mextract-path[2m.test.ts[22m[2m (4)[22m
-[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [33m❯[39m [2msrc/[22mlazy-translator[2m.test.ts[22m[2m (8)[22m
+ [32m✓[39m [2msrc/[22mplural[2m.test.ts[22m[2m (2)[22m
+[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [33m❯[39m [2msrc/[22mlazy-translator[2m.test.ts[22m[2m (8)[22m
    [32m✓[39m Should load and return translation
    [32m✓[39m Should cache keys and avoid unnecessary loading
    [32m✓[39m Should handle nested keys
@@ -360,12 +264,11 @@
    [90m·[39m Should cache plural translations
  [32m✓[39m [2msrc/[22mtranslator-from-dictionary[2m.test.ts[22m[2m (10)[22m
  [32m✓[39m [2msrc/[22mtranslator[2m.test.ts[22m[2m (8)[22m
+ [32m✓[39m [2msrc/[22mselect[2m.test.ts[22m[2m (2)[22m
  [32m✓[39m [2msrc/[22mtranslator-scope[2m.test.ts[22m[2m (9)[22m
- [32m✓[39m [2msrc/[22mplural[2m.test.ts[22m[2m (2)[22m
  [32m✓[39m [2msrc/[22mphrase-builder[2m.test.ts[22m[2m (10)[22m
- [32m✓[39m [2msrc/[22mdeep[2m.test.ts[22m[2m (7)[22m
- [32m✓[39m [2msrc/[22mextract-path[2m.test.ts[22m[2m (4)[22m
-[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [33m❯[39m [2msrc/[22mlazy-translator[2m.test.ts[22m[2m (8)[22m
+ [32m✓[39m [2msrc/[22mplural[2m.test.ts[22m[2m (2)[22m
+[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [33m❯[39m [2msrc/[22mlazy-translator[2m.test.ts[22m[2m (8)[22m
    [32m✓[39m Should load and return translation
    [32m✓[39m Should cache keys and avoid unnecessary loading
    [32m✓[39m Should handle nested keys
@@ -376,44 +279,11 @@
    [90m·[39m Should cache plural translations
  [32m✓[39m [2msrc/[22mtranslator-from-dictionary[2m.test.ts[22m[2m (10)[22m
  [32m✓[39m [2msrc/[22mtranslator[2m.test.ts[22m[2m (8)[22m
+ [32m✓[39m [2msrc/[22mselect[2m.test.ts[22m[2m (2)[22m
  [32m✓[39m [2msrc/[22mtranslator-scope[2m.test.ts[22m[2m (9)[22m
- [32m✓[39m [2msrc/[22mplural[2m.test.ts[22m[2m (2)[22m
  [32m✓[39m [2msrc/[22mphrase-builder[2m.test.ts[22m[2m (10)[22m
- [32m✓[39m [2msrc/[22mdeep[2m.test.ts[22m[2m (7)[22m
- [32m✓[39m [2msrc/[22mextract-path[2m.test.ts[22m[2m (4)[22m
-[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [33m❯[39m [2msrc/[22mlazy-translator[2m.test.ts[22m[2m (8)[22m
-   [32m✓[39m Should load and return translation
-   [32m✓[39m Should cache keys and avoid unnecessary loading
-   [32m✓[39m Should handle nested keys
-   [33m⠴[39m Should handle variables
-   [90m·[39m Should use initial translations
-   [90m·[39m Should load missing keys
-   [90m·[39m Should handle plural translations
-   [90m·[39m Should cache plural translations
- [32m✓[39m [2msrc/[22mtranslator-from-dictionary[2m.test.ts[22m[2m (10)[22m
- [32m✓[39m [2msrc/[22mtranslator[2m.test.ts[22m[2m (8)[22m
- [32m✓[39m [2msrc/[22mtranslator-scope[2m.test.ts[22m[2m (9)[22m
  [32m✓[39m [2msrc/[22mplural[2m.test.ts[22m[2m (2)[22m
- [32m✓[39m [2msrc/[22mphrase-builder[2m.test.ts[22m[2m (10)[22m
- [32m✓[39m [2msrc/[22mdeep[2m.test.ts[22m[2m (7)[22m
- [32m✓[39m [2msrc/[22mextract-path[2m.test.ts[22m[2m (4)[22m
-[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [33m❯[39m [2msrc/[22mlazy-translator[2m.test.ts[22m[2m (8)[22m
-   [32m✓[39m Should load and return translation
-   [32m✓[39m Should cache keys and avoid unnecessary loading
-   [32m✓[39m Should handle nested keys
-   [33m⠦[39m Should handle variables
-   [90m·[39m Should use initial translations
-   [90m·[39m Should load missing keys
-   [90m·[39m Should handle plural translations
-   [90m·[39m Should cache plural translations
- [32m✓[39m [2msrc/[22mtranslator-from-dictionary[2m.test.ts[22m[2m (10)[22m
- [32m✓[39m [2msrc/[22mtranslator[2m.test.ts[22m[2m (8)[22m
- [32m✓[39m [2msrc/[22mtranslator-scope[2m.test.ts[22m[2m (9)[22m
- [32m✓[39m [2msrc/[22mplural[2m.test.ts[22m[2m (2)[22m
- [32m✓[39m [2msrc/[22mphrase-builder[2m.test.ts[22m[2m (10)[22m
- [32m✓[39m [2msrc/[22mdeep[2m.test.ts[22m[2m (7)[22m
- [32m✓[39m [2msrc/[22mextract-path[2m.test.ts[22m[2m (4)[22m
-[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [33m❯[39m [2msrc/[22mlazy-translator[2m.test.ts[22m[2m (8)[22m
+[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [33m❯[39m [2msrc/[22mlazy-translator[2m.test.ts[22m[2m (8)[22m
    [32m✓[39m Should load and return translation
    [32m✓[39m Should cache keys and avoid unnecessary loading
    [32m✓[39m Should handle nested keys
@@ -424,12 +294,11 @@
    [90m·[39m Should cache plural translations
  [32m✓[39m [2msrc/[22mtranslator-from-dictionary[2m.test.ts[22m[2m (10)[22m
  [32m✓[39m [2msrc/[22mtranslator[2m.test.ts[22m[2m (8)[22m
+ [32m✓[39m [2msrc/[22mselect[2m.test.ts[22m[2m (2)[22m
  [32m✓[39m [2msrc/[22mtranslator-scope[2m.test.ts[22m[2m (9)[22m
- [32m✓[39m [2msrc/[22mplural[2m.test.ts[22m[2m (2)[22m
  [32m✓[39m [2msrc/[22mphrase-builder[2m.test.ts[22m[2m (10)[22m
- [32m✓[39m [2msrc/[22mdeep[2m.test.ts[22m[2m (7)[22m
- [32m✓[39m [2msrc/[22mextract-path[2m.test.ts[22m[2m (4)[22m
-[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [33m❯[39m [2msrc/[22mlazy-translator[2m.test.ts[22m[2m (8)[22m
+ [32m✓[39m [2msrc/[22mplural[2m.test.ts[22m[2m (2)[22m
+[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [33m❯[39m [2msrc/[22mlazy-translator[2m.test.ts[22m[2m (8)[22m
    [32m✓[39m Should load and return translation
    [32m✓[39m Should cache keys and avoid unnecessary loading
    [32m✓[39m Should handle nested keys
@@ -440,12 +309,11 @@
    [90m·[39m Should cache plural translations
  [32m✓[39m [2msrc/[22mtranslator-from-dictionary[2m.test.ts[22m[2m (10)[22m
  [32m✓[39m [2msrc/[22mtranslator[2m.test.ts[22m[2m (8)[22m
+ [32m✓[39m [2msrc/[22mselect[2m.test.ts[22m[2m (2)[22m
  [32m✓[39m [2msrc/[22mtranslator-scope[2m.test.ts[22m[2m (9)[22m
- [32m✓[39m [2msrc/[22mplural[2m.test.ts[22m[2m (2)[22m
  [32m✓[39m [2msrc/[22mphrase-builder[2m.test.ts[22m[2m (10)[22m
- [32m✓[39m [2msrc/[22mdeep[2m.test.ts[22m[2m (7)[22m
- [32m✓[39m [2msrc/[22mextract-path[2m.test.ts[22m[2m (4)[22m
-[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [33m❯[39m [2msrc/[22mlazy-translator[2m.test.ts[22m[2m (8)[22m
+ [32m✓[39m [2msrc/[22mplural[2m.test.ts[22m[2m (2)[22m
+[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [33m❯[39m [2msrc/[22mlazy-translator[2m.test.ts[22m[2m (8)[22m
    [32m✓[39m Should load and return translation
    [32m✓[39m Should cache keys and avoid unnecessary loading
    [32m✓[39m Should handle nested keys
@@ -456,12 +324,11 @@
    [90m·[39m Should cache plural translations
  [32m✓[39m [2msrc/[22mtranslator-from-dictionary[2m.test.ts[22m[2m (10)[22m
  [32m✓[39m [2msrc/[22mtranslator[2m.test.ts[22m[2m (8)[22m
+ [32m✓[39m [2msrc/[22mselect[2m.test.ts[22m[2m (2)[22m
  [32m✓[39m [2msrc/[22mtranslator-scope[2m.test.ts[22m[2m (9)[22m
- [32m✓[39m [2msrc/[22mplural[2m.test.ts[22m[2m (2)[22m
  [32m✓[39m [2msrc/[22mphrase-builder[2m.test.ts[22m[2m (10)[22m
- [32m✓[39m [2msrc/[22mdeep[2m.test.ts[22m[2m (7)[22m
- [32m✓[39m [2msrc/[22mextract-path[2m.test.ts[22m[2m (4)[22m
-[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [33m❯[39m [2msrc/[22mlazy-translator[2m.test.ts[22m[2m (8)[22m
+ [32m✓[39m [2msrc/[22mplural[2m.test.ts[22m[2m (2)[22m
+[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [33m❯[39m [2msrc/[22mlazy-translator[2m.test.ts[22m[2m (8)[22m
    [32m✓[39m Should load and return translation
    [32m✓[39m Should cache keys and avoid unnecessary loading
    [32m✓[39m Should handle nested keys
@@ -472,11 +339,11 @@
    [90m·[39m Should cache plural translations
  [32m✓[39m [2msrc/[22mtranslator-from-dictionary[2m.test.ts[22m[2m (10)[22m
  [32m✓[39m [2msrc/[22mtranslator[2m.test.ts[22m[2m (8)[22m
+ [32m✓[39m [2msrc/[22mselect[2m.test.ts[22m[2m (2)[22m
  [32m✓[39m [2msrc/[22mtranslator-scope[2m.test.ts[22m[2m (9)[22m
- [32m✓[39m [2msrc/[22mplural[2m.test.ts[22m[2m (2)[22m
  [32m✓[39m [2msrc/[22mphrase-builder[2m.test.ts[22m[2m (10)[22m
- [32m✓[39m [2msrc/[22mdeep[2m.test.ts[22m[2m (7)[22m
- [32m✓[39m [2msrc/[22mextract-path[2m.test.ts[22m[2m (4)[22m
+ [32m✓[39m [2msrc/[22mplural[2m.test.ts[22m[2m (2)[22m
+ [90m·[39m [2msrc/[22mextract-path[2m.test.ts[22m[2m (4)[22m
 [?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [33m❯[39m [2msrc/[22mlazy-translator[2m.test.ts[22m[2m (8)[22m
    [32m✓[39m Should load and return translation
    [32m✓[39m Should cache keys and avoid unnecessary loading
@@ -488,12 +355,13 @@
    [90m·[39m Should cache plural translations
  [32m✓[39m [2msrc/[22mtranslator-from-dictionary[2m.test.ts[22m[2m (10)[22m
  [32m✓[39m [2msrc/[22mtranslator[2m.test.ts[22m[2m (8)[22m
+ [32m✓[39m [2msrc/[22mselect[2m.test.ts[22m[2m (2)[22m
  [32m✓[39m [2msrc/[22mtranslator-scope[2m.test.ts[22m[2m (9)[22m
- [32m✓[39m [2msrc/[22mplural[2m.test.ts[22m[2m (2)[22m
  [32m✓[39m [2msrc/[22mphrase-builder[2m.test.ts[22m[2m (10)[22m
+ [32m✓[39m [2msrc/[22mplural[2m.test.ts[22m[2m (2)[22m
  [32m✓[39m [2msrc/[22mdeep[2m.test.ts[22m[2m (7)[22m
  [32m✓[39m [2msrc/[22mextract-path[2m.test.ts[22m[2m (4)[22m
-[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [33m❯[39m [2msrc/[22mlazy-translator[2m.test.ts[22m[2m (8)[22m
+[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [33m❯[39m [2msrc/[22mlazy-translator[2m.test.ts[22m[2m (8)[22m
    [32m✓[39m Should load and return translation
    [32m✓[39m Should cache keys and avoid unnecessary loading
    [32m✓[39m Should handle nested keys
@@ -504,12 +372,13 @@
    [90m·[39m Should cache plural translations
  [32m✓[39m [2msrc/[22mtranslator-from-dictionary[2m.test.ts[22m[2m (10)[22m
  [32m✓[39m [2msrc/[22mtranslator[2m.test.ts[22m[2m (8)[22m
+ [32m✓[39m [2msrc/[22mselect[2m.test.ts[22m[2m (2)[22m
  [32m✓[39m [2msrc/[22mtranslator-scope[2m.test.ts[22m[2m (9)[22m
- [32m✓[39m [2msrc/[22mplural[2m.test.ts[22m[2m (2)[22m
  [32m✓[39m [2msrc/[22mphrase-builder[2m.test.ts[22m[2m (10)[22m
+ [32m✓[39m [2msrc/[22mplural[2m.test.ts[22m[2m (2)[22m
  [32m✓[39m [2msrc/[22mdeep[2m.test.ts[22m[2m (7)[22m
  [32m✓[39m [2msrc/[22mextract-path[2m.test.ts[22m[2m (4)[22m
-[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [33m❯[39m [2msrc/[22mlazy-translator[2m.test.ts[22m[2m (8)[22m
+[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [33m❯[39m [2msrc/[22mlazy-translator[2m.test.ts[22m[2m (8)[22m
    [32m✓[39m Should load and return translation
    [32m✓[39m Should cache keys and avoid unnecessary loading
    [32m✓[39m Should handle nested keys
@@ -520,12 +389,13 @@
    [90m·[39m Should cache plural translations
  [32m✓[39m [2msrc/[22mtranslator-from-dictionary[2m.test.ts[22m[2m (10)[22m
  [32m✓[39m [2msrc/[22mtranslator[2m.test.ts[22m[2m (8)[22m
+ [32m✓[39m [2msrc/[22mselect[2m.test.ts[22m[2m (2)[22m
  [32m✓[39m [2msrc/[22mtranslator-scope[2m.test.ts[22m[2m (9)[22m
- [32m✓[39m [2msrc/[22mplural[2m.test.ts[22m[2m (2)[22m
  [32m✓[39m [2msrc/[22mphrase-builder[2m.test.ts[22m[2m (10)[22m
+ [32m✓[39m [2msrc/[22mplural[2m.test.ts[22m[2m (2)[22m
  [32m✓[39m [2msrc/[22mdeep[2m.test.ts[22m[2m (7)[22m
  [32m✓[39m [2msrc/[22mextract-path[2m.test.ts[22m[2m (4)[22m
-[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [33m❯[39m [2msrc/[22mlazy-translator[2m.test.ts[22m[2m (8)[22m
+[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [33m❯[39m [2msrc/[22mlazy-translator[2m.test.ts[22m[2m (8)[22m
    [32m✓[39m Should load and return translation
    [32m✓[39m Should cache keys and avoid unnecessary loading
    [32m✓[39m Should handle nested keys
@@ -536,12 +406,13 @@
    [90m·[39m Should cache plural translations
  [32m✓[39m [2msrc/[22mtranslator-from-dictionary[2m.test.ts[22m[2m (10)[22m
  [32m✓[39m [2msrc/[22mtranslator[2m.test.ts[22m[2m (8)[22m
+ [32m✓[39m [2msrc/[22mselect[2m.test.ts[22m[2m (2)[22m
  [32m✓[39m [2msrc/[22mtranslator-scope[2m.test.ts[22m[2m (9)[22m
- [32m✓[39m [2msrc/[22mplural[2m.test.ts[22m[2m (2)[22m
  [32m✓[39m [2msrc/[22mphrase-builder[2m.test.ts[22m[2m (10)[22m
+ [32m✓[39m [2msrc/[22mplural[2m.test.ts[22m[2m (2)[22m
  [32m✓[39m [2msrc/[22mdeep[2m.test.ts[22m[2m (7)[22m
  [32m✓[39m [2msrc/[22mextract-path[2m.test.ts[22m[2m (4)[22m
-[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [33m❯[39m [2msrc/[22mlazy-translator[2m.test.ts[22m[2m (8)[22m
+[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [33m❯[39m [2msrc/[22mlazy-translator[2m.test.ts[22m[2m (8)[22m
    [32m✓[39m Should load and return translation
    [32m✓[39m Should cache keys and avoid unnecessary loading
    [32m✓[39m Should handle nested keys
@@ -552,12 +423,13 @@
    [90m·[39m Should cache plural translations
  [32m✓[39m [2msrc/[22mtranslator-from-dictionary[2m.test.ts[22m[2m (10)[22m
  [32m✓[39m [2msrc/[22mtranslator[2m.test.ts[22m[2m (8)[22m
+ [32m✓[39m [2msrc/[22mselect[2m.test.ts[22m[2m (2)[22m
  [32m✓[39m [2msrc/[22mtranslator-scope[2m.test.ts[22m[2m (9)[22m
- [32m✓[39m [2msrc/[22mplural[2m.test.ts[22m[2m (2)[22m
  [32m✓[39m [2msrc/[22mphrase-builder[2m.test.ts[22m[2m (10)[22m
+ [32m✓[39m [2msrc/[22mplural[2m.test.ts[22m[2m (2)[22m
  [32m✓[39m [2msrc/[22mdeep[2m.test.ts[22m[2m (7)[22m
  [32m✓[39m [2msrc/[22mextract-path[2m.test.ts[22m[2m (4)[22m
-[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [33m❯[39m [2msrc/[22mlazy-translator[2m.test.ts[22m[2m (8)[22m
+[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [33m❯[39m [2msrc/[22mlazy-translator[2m.test.ts[22m[2m (8)[22m
    [32m✓[39m Should load and return translation
    [32m✓[39m Should cache keys and avoid unnecessary loading
    [32m✓[39m Should handle nested keys
@@ -568,12 +440,13 @@
    [90m·[39m Should cache plural translations
  [32m✓[39m [2msrc/[22mtranslator-from-dictionary[2m.test.ts[22m[2m (10)[22m
  [32m✓[39m [2msrc/[22mtranslator[2m.test.ts[22m[2m (8)[22m
+ [32m✓[39m [2msrc/[22mselect[2m.test.ts[22m[2m (2)[22m
  [32m✓[39m [2msrc/[22mtranslator-scope[2m.test.ts[22m[2m (9)[22m
- [32m✓[39m [2msrc/[22mplural[2m.test.ts[22m[2m (2)[22m
  [32m✓[39m [2msrc/[22mphrase-builder[2m.test.ts[22m[2m (10)[22m
+ [32m✓[39m [2msrc/[22mplural[2m.test.ts[22m[2m (2)[22m
  [32m✓[39m [2msrc/[22mdeep[2m.test.ts[22m[2m (7)[22m
  [32m✓[39m [2msrc/[22mextract-path[2m.test.ts[22m[2m (4)[22m
-[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [33m❯[39m [2msrc/[22mlazy-translator[2m.test.ts[22m[2m (8)[22m
+[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [33m❯[39m [2msrc/[22mlazy-translator[2m.test.ts[22m[2m (8)[22m
    [32m✓[39m Should load and return translation
    [32m✓[39m Should cache keys and avoid unnecessary loading
    [32m✓[39m Should handle nested keys
@@ -584,12 +457,13 @@
    [90m·[39m Should cache plural translations
  [32m✓[39m [2msrc/[22mtranslator-from-dictionary[2m.test.ts[22m[2m (10)[22m
  [32m✓[39m [2msrc/[22mtranslator[2m.test.ts[22m[2m (8)[22m
+ [32m✓[39m [2msrc/[22mselect[2m.test.ts[22m[2m (2)[22m
  [32m✓[39m [2msrc/[22mtranslator-scope[2m.test.ts[22m[2m (9)[22m
- [32m✓[39m [2msrc/[22mplural[2m.test.ts[22m[2m (2)[22m
  [32m✓[39m [2msrc/[22mphrase-builder[2m.test.ts[22m[2m (10)[22m
+ [32m✓[39m [2msrc/[22mplural[2m.test.ts[22m[2m (2)[22m
  [32m✓[39m [2msrc/[22mdeep[2m.test.ts[22m[2m (7)[22m
  [32m✓[39m [2msrc/[22mextract-path[2m.test.ts[22m[2m (4)[22m
-[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [33m❯[39m [2msrc/[22mlazy-translator[2m.test.ts[22m[2m (8)[22m
+[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [33m❯[39m [2msrc/[22mlazy-translator[2m.test.ts[22m[2m (8)[22m
    [32m✓[39m Should load and return translation
    [32m✓[39m Should cache keys and avoid unnecessary loading
    [32m✓[39m Should handle nested keys
@@ -600,12 +474,13 @@
    [90m·[39m Should cache plural translations
  [32m✓[39m [2msrc/[22mtranslator-from-dictionary[2m.test.ts[22m[2m (10)[22m
  [32m✓[39m [2msrc/[22mtranslator[2m.test.ts[22m[2m (8)[22m
+ [32m✓[39m [2msrc/[22mselect[2m.test.ts[22m[2m (2)[22m
  [32m✓[39m [2msrc/[22mtranslator-scope[2m.test.ts[22m[2m (9)[22m
- [32m✓[39m [2msrc/[22mplural[2m.test.ts[22m[2m (2)[22m
  [32m✓[39m [2msrc/[22mphrase-builder[2m.test.ts[22m[2m (10)[22m
+ [32m✓[39m [2msrc/[22mplural[2m.test.ts[22m[2m (2)[22m
  [32m✓[39m [2msrc/[22mdeep[2m.test.ts[22m[2m (7)[22m
  [32m✓[39m [2msrc/[22mextract-path[2m.test.ts[22m[2m (4)[22m
-[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [33m❯[39m [2msrc/[22mlazy-translator[2m.test.ts[22m[2m (8)[22m
+[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [33m❯[39m [2msrc/[22mlazy-translator[2m.test.ts[22m[2m (8)[22m
    [32m✓[39m Should load and return translation
    [32m✓[39m Should cache keys and avoid unnecessary loading
    [32m✓[39m Should handle nested keys
@@ -616,12 +491,13 @@
    [33m⠙[39m Should cache plural translations
  [32m✓[39m [2msrc/[22mtranslator-from-dictionary[2m.test.ts[22m[2m (10)[22m
  [32m✓[39m [2msrc/[22mtranslator[2m.test.ts[22m[2m (8)[22m
+ [32m✓[39m [2msrc/[22mselect[2m.test.ts[22m[2m (2)[22m
  [32m✓[39m [2msrc/[22mtranslator-scope[2m.test.ts[22m[2m (9)[22m
- [32m✓[39m [2msrc/[22mplural[2m.test.ts[22m[2m (2)[22m
  [32m✓[39m [2msrc/[22mphrase-builder[2m.test.ts[22m[2m (10)[22m
+ [32m✓[39m [2msrc/[22mplural[2m.test.ts[22m[2m (2)[22m
  [32m✓[39m [2msrc/[22mdeep[2m.test.ts[22m[2m (7)[22m
  [32m✓[39m [2msrc/[22mextract-path[2m.test.ts[22m[2m (4)[22m
-[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [33m❯[39m [2msrc/[22mlazy-translator[2m.test.ts[22m[2m (8)[22m
+[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [33m❯[39m [2msrc/[22mlazy-translator[2m.test.ts[22m[2m (8)[22m
    [32m✓[39m Should load and return translation
    [32m✓[39m Should cache keys and avoid unnecessary loading
    [32m✓[39m Should handle nested keys
@@ -632,12 +508,13 @@
    [33m⠹[39m Should cache plural translations
  [32m✓[39m [2msrc/[22mtranslator-from-dictionary[2m.test.ts[22m[2m (10)[22m
  [32m✓[39m [2msrc/[22mtranslator[2m.test.ts[22m[2m (8)[22m
+ [32m✓[39m [2msrc/[22mselect[2m.test.ts[22m[2m (2)[22m
  [32m✓[39m [2msrc/[22mtranslator-scope[2m.test.ts[22m[2m (9)[22m
- [32m✓[39m [2msrc/[22mplural[2m.test.ts[22m[2m (2)[22m
  [32m✓[39m [2msrc/[22mphrase-builder[2m.test.ts[22m[2m (10)[22m
+ [32m✓[39m [2msrc/[22mplural[2m.test.ts[22m[2m (2)[22m
  [32m✓[39m [2msrc/[22mdeep[2m.test.ts[22m[2m (7)[22m
  [32m✓[39m [2msrc/[22mextract-path[2m.test.ts[22m[2m (4)[22m
-[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [33m❯[39m [2msrc/[22mlazy-translator[2m.test.ts[22m[2m (8)[22m
+[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [33m❯[39m [2msrc/[22mlazy-translator[2m.test.ts[22m[2m (8)[22m
    [32m✓[39m Should load and return translation
    [32m✓[39m Should cache keys and avoid unnecessary loading
    [32m✓[39m Should handle nested keys
@@ -648,12 +525,13 @@
    [33m⠸[39m Should cache plural translations
  [32m✓[39m [2msrc/[22mtranslator-from-dictionary[2m.test.ts[22m[2m (10)[22m
  [32m✓[39m [2msrc/[22mtranslator[2m.test.ts[22m[2m (8)[22m
+ [32m✓[39m [2msrc/[22mselect[2m.test.ts[22m[2m (2)[22m
  [32m✓[39m [2msrc/[22mtranslator-scope[2m.test.ts[22m[2m (9)[22m
- [32m✓[39m [2msrc/[22mplural[2m.test.ts[22m[2m (2)[22m
  [32m✓[39m [2msrc/[22mphrase-builder[2m.test.ts[22m[2m (10)[22m
+ [32m✓[39m [2msrc/[22mplural[2m.test.ts[22m[2m (2)[22m
  [32m✓[39m [2msrc/[22mdeep[2m.test.ts[22m[2m (7)[22m
  [32m✓[39m [2msrc/[22mextract-path[2m.test.ts[22m[2m (4)[22m
-[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [33m❯[39m [2msrc/[22mlazy-translator[2m.test.ts[22m[2m (8)[22m
+[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [33m❯[39m [2msrc/[22mlazy-translator[2m.test.ts[22m[2m (8)[22m
    [32m✓[39m Should load and return translation
    [32m✓[39m Should cache keys and avoid unnecessary loading
    [32m✓[39m Should handle nested keys
@@ -664,12 +542,13 @@
    [33m⠼[39m Should cache plural translations
  [32m✓[39m [2msrc/[22mtranslator-from-dictionary[2m.test.ts[22m[2m (10)[22m
  [32m✓[39m [2msrc/[22mtranslator[2m.test.ts[22m[2m (8)[22m
+ [32m✓[39m [2msrc/[22mselect[2m.test.ts[22m[2m (2)[22m
  [32m✓[39m [2msrc/[22mtranslator-scope[2m.test.ts[22m[2m (9)[22m
- [32m✓[39m [2msrc/[22mplural[2m.test.ts[22m[2m (2)[22m
  [32m✓[39m [2msrc/[22mphrase-builder[2m.test.ts[22m[2m (10)[22m
+ [32m✓[39m [2msrc/[22mplural[2m.test.ts[22m[2m (2)[22m
  [32m✓[39m [2msrc/[22mdeep[2m.test.ts[22m[2m (7)[22m
  [32m✓[39m [2msrc/[22mextract-path[2m.test.ts[22m[2m (4)[22m
-[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [33m❯[39m [2msrc/[22mlazy-translator[2m.test.ts[22m[2m (8)[22m
+[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [33m❯[39m [2msrc/[22mlazy-translator[2m.test.ts[22m[2m (8)[22m
    [32m✓[39m Should load and return translation
    [32m✓[39m Should cache keys and avoid unnecessary loading
    [32m✓[39m Should handle nested keys
@@ -680,31 +559,51 @@
    [33m⠴[39m Should cache plural translations
  [32m✓[39m [2msrc/[22mtranslator-from-dictionary[2m.test.ts[22m[2m (10)[22m
  [32m✓[39m [2msrc/[22mtranslator[2m.test.ts[22m[2m (8)[22m
+ [32m✓[39m [2msrc/[22mselect[2m.test.ts[22m[2m (2)[22m
  [32m✓[39m [2msrc/[22mtranslator-scope[2m.test.ts[22m[2m (9)[22m
- [32m✓[39m [2msrc/[22mplural[2m.test.ts[22m[2m (2)[22m
  [32m✓[39m [2msrc/[22mphrase-builder[2m.test.ts[22m[2m (10)[22m
+ [32m✓[39m [2msrc/[22mplural[2m.test.ts[22m[2m (2)[22m
  [32m✓[39m [2msrc/[22mdeep[2m.test.ts[22m[2m (7)[22m
  [32m✓[39m [2msrc/[22mextract-path[2m.test.ts[22m[2m (4)[22m
-[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [32m✓[39m [2msrc/[22mlazy-translator[2m.test.ts[22m[2m (8)[22m[33m 782[2mms[22m[39m
+[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [33m❯[39m [2msrc/[22mlazy-translator[2m.test.ts[22m[2m (8)[22m
+   [32m✓[39m Should load and return translation
+   [32m✓[39m Should cache keys and avoid unnecessary loading
+   [32m✓[39m Should handle nested keys
+   [32m✓[39m Should handle variables
+   [32m✓[39m Should use initial translations
+   [32m✓[39m Should load missing keys
+   [32m✓[39m Should handle plural translations
+   [33m⠦[39m Should cache plural translations
  [32m✓[39m [2msrc/[22mtranslator-from-dictionary[2m.test.ts[22m[2m (10)[22m
  [32m✓[39m [2msrc/[22mtranslator[2m.test.ts[22m[2m (8)[22m
+ [32m✓[39m [2msrc/[22mselect[2m.test.ts[22m[2m (2)[22m
  [32m✓[39m [2msrc/[22mtranslator-scope[2m.test.ts[22m[2m (9)[22m
- [32m✓[39m [2msrc/[22mplural[2m.test.ts[22m[2m (2)[22m
  [32m✓[39m [2msrc/[22mphrase-builder[2m.test.ts[22m[2m (10)[22m
+ [32m✓[39m [2msrc/[22mplural[2m.test.ts[22m[2m (2)[22m
  [32m✓[39m [2msrc/[22mdeep[2m.test.ts[22m[2m (7)[22m
  [32m✓[39m [2msrc/[22mextract-path[2m.test.ts[22m[2m (4)[22m
-[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [32m✓[39m [2msrc/[22mdeep[2m.test.ts[22m[2m (7)[22m
- [32m✓[39m [2msrc/[22mextract-path[2m.test.ts[22m[2m (4)[22m
- [32m✓[39m [2msrc/[22mlazy-translator[2m.test.ts[22m[2m (8)[22m[33m 782[2mms[22m[39m
+[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [32m✓[39m [2msrc/[22mlazy-translator[2m.test.ts[22m[2m (8)[22m[33m 772[2mms[22m[39m
+ [32m✓[39m [2msrc/[22mtranslator-from-dictionary[2m.test.ts[22m[2m (10)[22m
+ [32m✓[39m [2msrc/[22mtranslator[2m.test.ts[22m[2m (8)[22m
+ [32m✓[39m [2msrc/[22mselect[2m.test.ts[22m[2m (2)[22m
+ [32m✓[39m [2msrc/[22mtranslator-scope[2m.test.ts[22m[2m (9)[22m
  [32m✓[39m [2msrc/[22mphrase-builder[2m.test.ts[22m[2m (10)[22m
  [32m✓[39m [2msrc/[22mplural[2m.test.ts[22m[2m (2)[22m
+ [32m✓[39m [2msrc/[22mdeep[2m.test.ts[22m[2m (7)[22m
+ [32m✓[39m [2msrc/[22mextract-path[2m.test.ts[22m[2m (4)[22m
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [32m✓[39m [2msrc/[22mdeep[2m.test.ts[22m[2m (7)[22m
+ [32m✓[39m [2msrc/[22mextract-path[2m.test.ts[22m[2m (4)[22m
+ [32m✓[39m [2msrc/[22mlazy-translator[2m.test.ts[22m[2m (8)[22m[33m 772[2mms[22m[39m
+ [32m✓[39m [2msrc/[22mphrase-builder[2m.test.ts[22m[2m (10)[22m
+ [32m✓[39m [2msrc/[22mplural[2m.test.ts[22m[2m (2)[22m
+ [32m✓[39m [2msrc/[22mselect[2m.test.ts[22m[2m (2)[22m
  [32m✓[39m [2msrc/[22mtranslator-from-dictionary[2m.test.ts[22m[2m (10)[22m
  [32m✓[39m [2msrc/[22mtranslator-scope[2m.test.ts[22m[2m (9)[22m
  [32m✓[39m [2msrc/[22mtranslator[2m.test.ts[22m[2m (8)[22m
 
-[2m Test Files [22m [1m[32m8 passed[39m[22m[90m (8)[39m
-[2m      Tests [22m [1m[32m58 passed[39m[22m[90m (58)[39m
-[2m   Start at [22m 10:30:37
-[2m   Duration [22m 1.31s[2m (transform 240ms, setup 0ms, collect 431ms, tests 809ms, environment 2ms, prepare 1.16s)[22m
+[2m Test Files [22m [1m[32m9 passed[39m[22m[90m (9)[39m
+[2m      Tests [22m [1m[32m60 passed[39m[22m[90m (60)[39m
+[2m   Start at [22m 08:44:04
+[2m   Duration [22m 1.59s[2m (transform 389ms, setup 0ms, collect 814ms, tests 824ms, environment 11ms, prepare 1.88s)[22m
 
 [?25h[?25h

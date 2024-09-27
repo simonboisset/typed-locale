@@ -1,5 +1,5 @@
 import {blog} from '~/contents/blog/blog.server';
-import {DEFAULT_LANGUAGE, doc, getSlug, getTitle, LATEST_VERSION} from '~/contents/doc/doc.server';
+import {DEFAULT_LANGUAGE, doc, getSlug, getTitle, LATEST_VERSION} from '~/contents/docs/doc.server';
 
 export const loader = async () => {
   const allDocs = doc;

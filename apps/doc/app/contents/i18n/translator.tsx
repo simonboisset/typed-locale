@@ -2,7 +2,7 @@ import {useParams} from '@remix-run/react';
 import {createContext, useContext} from 'react';
 import {createTranslatorFromDictionary, Translator} from 'typed-locale';
 import {useAppConfig} from '~/routes/($lang)';
-import {Language} from '../doc/doc.server';
+import {Language} from '../docs/doc.server';
 import {en, Translations} from './en';
 import {fr} from './fr';
 

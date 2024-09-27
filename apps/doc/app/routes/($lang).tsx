@@ -1,7 +1,7 @@
 import {LoaderFunctionArgs, MetaFunction, SerializeFrom} from '@remix-run/node';
 import {Outlet, useMatches} from '@remix-run/react';
 import {createTranslator} from 'typed-locale';
-import {DEFAULT_LANGUAGE, languageSchema, LATEST_VERSION, versions} from '~/contents/doc/doc.server';
+import {DEFAULT_LANGUAGE, languageSchema, LATEST_VERSION, versions} from '~/contents/docs/doc.server';
 import {dictionary} from '~/contents/i18n/translator';
 
 export const loader = async ({params}: LoaderFunctionArgs) => {

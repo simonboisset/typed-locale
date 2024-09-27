@@ -1,6 +1,6 @@
 import {redirect} from '@remix-run/node';
 import {Params} from '@remix-run/react';
-import {DEFAULT_LANGUAGE, getTitle, Language, languageSchema, LATEST_VERSION, LinkTree} from '../doc/doc.server';
+import {DEFAULT_LANGUAGE, getTitle, Language, languageSchema, LATEST_VERSION, LinkTree} from '../docs/doc.server';
 import {getAppUrl} from '../navigation/get-url';
 import {en} from './en';
 import {fr} from './fr';

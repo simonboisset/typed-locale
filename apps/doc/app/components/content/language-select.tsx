@@ -1,5 +1,5 @@
 import {useLocation, useNavigate, useParams} from '@remix-run/react';
-import {Language} from '~/contents/doc/doc.server';
+import {Language} from '~/contents/docs/doc.server';
 import {getAppUrl} from '~/contents/navigation/get-url';
 import {cn} from '~/lib/utils';
 import {useAppConfig} from '~/routes/($lang)';

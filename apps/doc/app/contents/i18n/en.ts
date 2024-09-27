@@ -49,6 +49,11 @@ export const en = {
     docs: 'Docs',
     blog: 'Blog',
   },
+  search: {
+    placeholder: 'Search documentation...',
+    submit: 'Search',
+    noResults: 'No results found',
+  },
 } as const;
 
 export type Translations = InferTranslation<typeof en>;

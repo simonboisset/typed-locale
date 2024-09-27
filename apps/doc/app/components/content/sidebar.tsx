@@ -1,6 +1,6 @@
 import {Link, useNavigate, useParams} from '@remix-run/react';
 import {Link2, MenuIcon} from 'lucide-react';
-import {LinkTree} from '~/contents/doc/doc.server';
+import {LinkTree} from '~/contents/docs/doc.server';
 import {useTranslation} from '~/contents/i18n/translator';
 import {getAppUrl} from '~/contents/navigation/get-url';
 import {useAppConfig} from '~/routes/($lang)';

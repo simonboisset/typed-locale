@@ -1,6 +1,6 @@
 import {LoaderFunctionArgs} from '@remix-run/node';
 import {redirect} from '@remix-run/react';
-import {DEFAULT_LANGUAGE, getDocSummaries, LATEST_VERSION, requireDoc} from '~/contents/doc/doc.server';
+import {DEFAULT_LANGUAGE, getDocSummaries, LATEST_VERSION, requireDoc} from '~/contents/docs/doc.server';
 import {getAppUrl} from '~/contents/navigation/get-url';
 
 export const loader = async ({params}: LoaderFunctionArgs) => {

@@ -1,7 +1,7 @@
 import type {LoaderFunctionArgs, MetaFunction} from '@remix-run/node';
 import {redirect, useLoaderData} from '@remix-run/react';
 import {ArticleContent, processedContent} from '~/components/content/article';
-import {DEFAULT_LANGUAGE, getDocSummaries, LATEST_VERSION, requireDoc} from '~/contents/doc/doc.server';
+import {DEFAULT_LANGUAGE, getDocSummaries, LATEST_VERSION, requireDoc} from '~/contents/docs/doc.server';
 import {getAppUrl} from '~/contents/navigation/get-url';
 
 export const meta: MetaFunction<typeof loader> = ({data}) => {
