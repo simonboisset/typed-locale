@@ -15,7 +15,7 @@ function Logo() {
   return (
     <Link to={lang ? `/${lang}` : '/'} className="flex items-center space-x-2">
       <BookType className="h-6 w-6" />
-      <span className="font-bold text-xl text-primary">Remix Shadcn Docs</span>
+      <span className="font-bold text-xl text-primary">Typed Locale</span>
     </Link>
   );
 }

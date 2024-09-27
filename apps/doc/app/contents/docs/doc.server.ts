@@ -5,9 +5,12 @@ import {getAppUrl} from '../navigation/get-url';
 import {v0_4_0} from './v0.4.0';
 import {v0_4_2} from './v0.4.2';
 import {v0_4_3} from './v0.4.3';
+import {v0_4_4} from './v0.4.4';
+
 export const DEFAULT_LANGUAGE = 'en';
 
 export const doc = {
+  v0_4_4,
   v0_4_3,
   v0_4_2,
   v0_4_0,

@@ -4,15 +4,15 @@ import {createTranslator} from './translator';
 import {createTranslatorFromDictionary} from './translator-from-dictionary';
 const en = {
   youHaveMessages: plural({
-    none: 'You have no messages',
-    one: 'You have 1 message',
+    0: 'You have no messages',
+    1: 'You have 1 message',
     other: 'You have {{count}} messages',
-  }),
+  } as const),
   helloNameYouHaveMessages: plural({
-    none: 'Hello, {{name}}. You have no messages',
-    one: 'Hello, {{name}}. You have 1 message',
+    0: 'Hello, {{name}}. You have no messages',
+    1: 'Hello, {{name}}. You have 1 message',
     other: 'Hello, {{name}}. You have {{count}} messages',
-  }),
+  } as const),
 } as const;
 
 const translateEn = createTranslator(en);

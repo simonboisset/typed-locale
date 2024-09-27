@@ -12,8 +12,8 @@ const en = {
     key: 'Nested key',
   },
   youHaveMessages: plural({
-    none: 'You have no messages',
-    one: 'You have 1 message',
+    0: 'You have no messages',
+    1: 'You have 1 message',
     other: 'You have {{count}} messages',
   }),
 } as const;
