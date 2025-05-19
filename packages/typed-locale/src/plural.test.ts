@@ -1,7 +1,7 @@
-import {expect, test} from 'vitest';
-import {plural} from './plural';
-import {createTranslator} from './translator';
-import {createTranslatorFromDictionary} from './translator-from-dictionary';
+import { expect, test } from 'vitest';
+import { plural } from './plural';
+import { createTranslator } from './translator';
+import { createTranslatorFromDictionary } from './translator-from-dictionary';
 const en = {
   youHaveMessages: plural({
     0: 'You have no messages',
@@ -47,4 +47,20 @@ test('Should translate correctly translator from dictionary with plural', () => 
   expect(translateEnFromDictionary(l => l.helloNameYouHaveMessages({count: 2, name: 'Jo'}))).toBe(
     'Hello, Jo. You have 2 messages',
   );
+});
+
+const enWithNone = {
+  youHaveMessages: plural({
+    none: 'You have no messages (none)',
+    1: 'You have 1 message',
+    other: 'You have {{count}} messages',
+  } as const),
+};
+
+const translateEnWithNone = createTranslator(enWithNone);
+
+test('Should use "none" key for count=0 if present', () => {
+  expect(translateEnWithNone(l => l.youHaveMessages({count: 0}))).toBe('You have no messages (none)');
+  expect(translateEnWithNone(l => l.youHaveMessages({count: 1}))).toBe('You have 1 message');
+  expect(translateEnWithNone(l => l.youHaveMessages({count: 2}))).toBe('You have 2 messages');
 });

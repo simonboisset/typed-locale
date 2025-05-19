@@ -33,7 +33,12 @@ export const getSelectPhraseBuilder = <T extends string, Config extends SelectCo
   // @ts-expect-error
   return (variables: Record<string, string | number>) => {
     const value = variables[selectKey.variable];
-    const selectedPhrase = selectKey.config[value] || selectKey.config['other'];
+    let selectedPhrase;
+    if (value === 0 && 'none' in selectKey.config) {
+      selectedPhrase = selectKey.config['none'];
+    } else {
+      selectedPhrase = selectKey.config[value] || selectKey.config['other'];
+    }
     return buildDoubleBracePhrase(selectedPhrase, variables);
   };
 };
