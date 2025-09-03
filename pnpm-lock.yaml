@@ -93,8 +93,8 @@ importers:
         specifier: ^1.0.7
         version: 1.0.7(tailwindcss@3.4.12)
       typed-locale:
-        specifier: ^0.4.2
-        version: 0.4.2
+        specifier: workspace:*
+        version: link:../../packages/typed-locale
       vaul:
         specifier: ^1.0.0
         version: 1.0.0(@types/react-dom@18.3.0)(@types/react@18.3.8)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -4429,9 +4429,6 @@ packages:
   typed-array-length@1.0.6:
     resolution: {integrity: sha512-/OxDN6OtAk5KBpGb28T+HZc2M+ADtvRxXrKKbUwtsLgdoxgX13hyy7ek6bFRl5+aBs2yZzB0c4CnQfAtVypW/g==}
     engines: {node: '>= 0.4'}
-
-  typed-locale@0.4.2:
-    resolution: {integrity: sha512-+yVasMhd46r25lIympUp05s22Z+gWOV5hXWL4PY1Y2XPNkxB9fohMcTwod/xchUyjcA+4D2OaaWDM/RwJlX9xw==}
 
   typescript@5.6.2:
     resolution: {integrity: sha512-NW8ByodCSNCwZeghjN3o+JX5OFH0Ojg6sadjEKY4huZ52TqbJTJnDo5+Tw98lSy63NZvi4n+ez5m2u5d4PkZyw==}
@@ -9737,8 +9734,6 @@ snapshots:
       has-proto: 1.0.3
       is-typed-array: 1.1.13
       possible-typed-array-names: 1.0.0
-
-  typed-locale@0.4.2: {}
 
   typescript@5.6.2: {}
 
