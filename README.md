@@ -278,48 +278,34 @@ Here is the roadmap for the library.
 
 Feel free to open an issue or pull request if you have any idea or suggestion.
 
-## Contribution guide
+## Contributing
 
-This library is still in the early stage, so any contribution is welcome.
-Here are some ways to contribute to this library.
+We welcome contributions! Please see our [Contributing Guide](./CONTRIBUTING.md) for detailed instructions.
 
-In general, the contribution process is as follows:
+### Quick Start for Contributors
 
-1. Fork this repository and make changes
-2. Create a pull request
-3. Wait for the review
-4. I will review the pull request
-5. If everything is fine, I will merge the pull request and release a new version
+1. **Fork and clone the repository**
+2. **Install dependencies**: `pnpm install`
+3. **Make your changes** and add tests
+4. **Create a changeset**: `pnpm changeset`
+5. **Submit a pull request**
 
-### Setup the project locally
+## Release Process
 
-After forking this repository, you can set up the project locally by following the steps below.
+This project uses [Changesets](https://github.com/changesets/changesets) for version management and automated releases:
 
-```bash
-pnpm install
-```
+- **Automated releases**: When changes are merged to `main`, packages are automatically published to npm
+- **Changelog generation**: Changelogs are automatically generated from changeset descriptions  
+- **Semantic versioning**: Version bumps follow semantic versioning based on changeset types
 
-As you can see, this project uses `pnpm` as a package manager. If you don't have `pnpm` installed, you can install it by running the following command.
+### For Contributors
 
-```bash
-npm install -g pnpm
-```
-
-### Run the test
-
-You can run the test by running the following command.
+When making changes, please create a changeset:
 
 ```bash
-pnpm test
+pnpm changeset
 ```
 
-### Write your update
-
-After setting up the project locally, you can make changes to the code.
-
-> For every change, you need to write tests to make sure that the changes work as expected.
-> I will be attentive to the test coverage, so please write tests for every change.
-
-Then you can commit your changes and create a pull request.
+This helps us track changes and generate proper release notes.
 
 Thank you for reading this README.md file. I hope you enjoy using this library.

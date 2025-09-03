@@ -10,9 +10,13 @@
     "build": "turbo build",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "ts": "turbo ts",
-    "test": "turbo test"
+    "test": "turbo test",
+    "changeset": "changeset",
+    "version": "changeset version && pnpm install --lockfile-only",
+    "release": "pnpm build && changeset publish"
   },
   "devDependencies": {
+    "@changesets/cli": "^2.29.6",
     "monoversion": "^1.2.2",
     "prettier": "^3.3.2",
     "turbo": "^2.0.6"
