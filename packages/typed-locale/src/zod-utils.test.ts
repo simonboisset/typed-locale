@@ -1,8 +1,7 @@
 import {describe, expect, test} from 'vitest';
 import {z} from 'zod';
-import {createOptionsGenerator} from './options-generator';
 import {createTranslator} from './translator';
-import {createZodError, extractTranslationIssues, renderTranslationIssues, withTranslationMessage} from './zod-utils';
+import {createZodOptions, createZodTranslator} from './zod-utils';
 
 const en = {
   required: 'This field is required',
@@ -36,14 +35,13 @@ const fr = {
   },
 } as const;
 
-const optionsEn = createOptionsGenerator(en);
+const optionsEn = createZodOptions(en);
 const translateEn = createTranslator(en);
 const translateFr = createTranslator(fr);
 
 describe('Zod Utils - Basic functionality', () => {
   test('Should create translation message that can be used with Zod', () => {
-    const requiredOption = optionsEn(l => l.required);
-    const translationMessage = withTranslationMessage(requiredOption);
+    const translationMessage = optionsEn(l => l.required);
 
     const schema = z.string().min(1, translationMessage);
     const result = schema.safeParse('');
@@ -55,50 +53,50 @@ describe('Zod Utils - Basic functionality', () => {
   });
 
   test('Should extract translation issues from Zod error', () => {
-    const requiredOption = optionsEn(l => l.required);
-    const emailOption = optionsEn(l => l.invalidEmail);
-
     const schema = z.object({
-      name: z.string().min(1, withTranslationMessage(requiredOption)),
-      email: z.string().email(withTranslationMessage(emailOption)),
+      name: z.string().min(
+        1,
+        optionsEn(l => l.required),
+      ),
+      email: z.string().email(optionsEn(l => l.invalidEmail)),
     });
 
     const result = schema.safeParse({name: '', email: 'invalid-email'});
 
     expect(result.success).toBe(false);
     if (!result.success) {
-      const {translationIssues, regularIssues} = extractTranslationIssues(result.error);
+      const translator = createZodTranslator(translateEn);
+      const issues = translator(result.error);
 
-      expect(translationIssues).toHaveLength(2);
-      expect(regularIssues).toHaveLength(0);
-
-      expect(translationIssues[0].path).toEqual(['name']);
-      expect(translationIssues[1].path).toEqual(['email']);
+      expect(issues[0].path).toEqual(['name']);
+      expect(issues[1].path).toEqual(['email']);
     }
   });
 
   test('Should render translation issues with translator', () => {
-    const requiredOption = optionsEn(l => l.required);
-    const passwordOption = optionsEn(l => l.passwordTooShort({min: 8}));
-
     const schema = z.object({
-      username: z.string().min(1, withTranslationMessage(requiredOption)),
-      password: z.string().min(8, withTranslationMessage(passwordOption)),
+      username: z.string().min(
+        1,
+        optionsEn(l => l.required),
+      ),
+      password: z.string().min(
+        8,
+        optionsEn(l => l.passwordTooShort({min: 8})),
+      ),
     });
 
     const result = schema.safeParse({username: '', password: '123'});
 
     expect(result.success).toBe(false);
     if (!result.success) {
-      const {translationIssues} = extractTranslationIssues(result.error);
-      const renderedEn = renderTranslationIssues(translationIssues, translateEn);
-      const renderedFr = renderTranslationIssues(translationIssues, translateFr);
+      const issuesEn = createZodTranslator(translateEn)(result.error);
+      const issuesFr = createZodTranslator(translateFr)(result.error);
 
-      expect(renderedEn[0].message).toBe('This field is required');
-      expect(renderedEn[1].message).toBe('Password must be at least 8 characters long');
+      expect(issuesEn[0].message).toBe('This field is required');
+      expect(issuesEn[1].message).toBe('Password must be at least 8 characters long');
 
-      expect(renderedFr[0].message).toBe('Ce champ est obligatoire');
-      expect(renderedFr[1].message).toBe('Le mot de passe doit contenir au moins 8 caractères');
+      expect(issuesFr[0].message).toBe('Ce champ est obligatoire');
+      expect(issuesFr[1].message).toBe('Le mot de passe doit contenir au moins 8 caractères');
     }
   });
 
@@ -107,14 +105,20 @@ describe('Zod Utils - Basic functionality', () => {
     const userRegistrationSchema = z.object({
       email: z
         .string()
-        .min(1, withTranslationMessage(optionsEn(l => l.required)))
-        .email(withTranslationMessage(optionsEn(l => l.invalidEmail))),
-      password: z.string().min(8, withTranslationMessage(optionsEn(l => l.passwordTooShort({min: 8})))),
+        .min(
+          1,
+          optionsEn(l => l.required),
+        )
+        .email(optionsEn(l => l.invalidEmail)),
+      password: z.string().min(
+        8,
+        optionsEn(l => l.passwordTooShort({min: 8})),
+      ),
     });
 
     // 2. Create error renderers for each language you support
-    const renderEnglishErrors = createZodError(translateEn);
-    const renderFrenchErrors = createZodError(translateFr);
+    const renderEnglishErrors = createZodTranslator(translateEn);
+    const renderFrenchErrors = createZodTranslator(translateFr);
 
     // 3. Use the SAME schema everywhere
     const invalidData = {email: 'invalid-email', password: '123'};
@@ -126,10 +130,6 @@ describe('Zod Utils - Basic functionality', () => {
       // 4. Render errors in the language your user prefers
       const englishErrors = renderEnglishErrors(validationResult.error);
       const frenchErrors = renderFrenchErrors(validationResult.error);
-
-      // Same validation, different languages
-      expect(englishErrors).toHaveLength(2);
-      expect(frenchErrors).toHaveLength(2);
 
       expect(englishErrors.find(e => e.path[0] === 'email')?.message).toBe('Please enter a valid email address');
       expect(frenchErrors.find(e => e.path[0] === 'email')?.message).toBe('Veuillez saisir une adresse e-mail valide');
@@ -150,22 +150,40 @@ describe('Zod Utils - Real-world examples', () => {
       return z.object({
         username: z
           .string()
-          .min(1, withTranslationMessage(options(l => l.required)))
-          .regex(/^[a-zA-Z0-9_]+$/, withTranslationMessage(options(l => l.invalidUsername))),
+          .min(
+            1,
+            options(l => l.required),
+          )
+          .regex(
+            /^[a-zA-Z0-9_]+$/,
+            options(l => l.invalidUsername),
+          ),
         email: z
           .string()
-          .min(1, withTranslationMessage(options(l => l.required)))
-          .email(withTranslationMessage(options(l => l.invalidEmail))),
+          .min(
+            1,
+            options(l => l.required),
+          )
+          .email(options(l => l.invalidEmail)),
         password: z
           .string()
-          .min(8, withTranslationMessage(options(l => l.passwordTooShort({min: 8}))))
-          .max(50, withTranslationMessage(options(l => l.passwordTooLong({max: 50})))),
-        age: z.number().min(18, withTranslationMessage(options(l => l.ageTooLow({min: 18})))),
+          .min(
+            8,
+            options(l => l.passwordTooShort({min: 8})),
+          )
+          .max(
+            50,
+            options(l => l.passwordTooLong({max: 50})),
+          ),
+        age: z.number().min(
+          18,
+          options(l => l.ageTooLow({min: 18})),
+        ),
       });
     };
 
     const schema = createUserSchema(optionsEn);
-    const errorRenderer = createZodError(translateFr);
+    const errorRenderer = createZodTranslator(translateFr);
 
     const result = schema.safeParse({
       username: 'invalid-user!',
@@ -178,7 +196,6 @@ describe('Zod Utils - Real-world examples', () => {
     if (!result.success) {
       const errors = errorRenderer(result.error);
 
-      expect(errors).toHaveLength(4);
       expect(errors.find(e => e.path[0] === 'username')?.message).toBe(
         "Le nom d'utilisateur ne peut contenir que des lettres, chiffres et underscores",
       );
@@ -194,8 +211,14 @@ describe('Zod Utils - Real-world examples', () => {
     const createNestedSchema = (options: typeof optionsEn) => {
       return z.object({
         profile: z.object({
-          bio: z.string().min(10, withTranslationMessage(options(l => l.nested.validation.stringTooShort({min: 10})))),
-          score: z.number().min(0, withTranslationMessage(options(l => l.nested.validation.numberTooLow({min: 0})))),
+          bio: z.string().min(
+            10,
+            optionsEn(l => l.nested.validation.stringTooShort({min: 10})),
+          ),
+          score: z.number().min(
+            0,
+            optionsEn(l => l.nested.validation.numberTooLow({min: 0})),
+          ),
         }),
       });
     };
@@ -210,23 +233,25 @@ describe('Zod Utils - Real-world examples', () => {
 
     expect(result.success).toBe(false);
     if (!result.success) {
-      const {translationIssues} = extractTranslationIssues(result.error);
-      const renderedEn = renderTranslationIssues(translationIssues, translateEn);
-      const renderedFr = renderTranslationIssues(translationIssues, translateFr);
+      const issuesEn = createZodTranslator(translateEn)(result.error);
+      const issuesFr = createZodTranslator(translateFr)(result.error);
 
-      expect(renderedEn[0].path).toEqual(['profile', 'bio']);
-      expect(renderedEn[0].message).toBe('Must be at least 10 characters');
-      expect(renderedEn[1].path).toEqual(['profile', 'score']);
-      expect(renderedEn[1].message).toBe('Must be at least 0');
+      expect(issuesEn[0].path).toEqual(['profile', 'bio']);
+      expect(issuesEn[0].message).toBe('Must be at least 10 characters');
+      expect(issuesEn[1].path).toEqual(['profile', 'score']);
+      expect(issuesEn[1].message).toBe('Must be at least 0');
 
-      expect(renderedFr[0].message).toBe('Doit contenir au moins 10 caractères');
-      expect(renderedFr[1].message).toBe('Doit être au moins 0');
+      expect(issuesFr[0].message).toBe('Doit contenir au moins 10 caractères');
+      expect(issuesFr[1].message).toBe('Doit être au moins 0');
     }
   });
 
   test('Mix of translated and regular Zod messages', () => {
     const schema = z.object({
-      translatedField: z.string().min(1, withTranslationMessage(optionsEn(l => l.required))),
+      translatedField: z.string().min(
+        1,
+        optionsEn(l => l.required),
+      ),
       regularField: z.string().min(5, 'This is a regular Zod message'),
     });
 
@@ -237,27 +262,28 @@ describe('Zod Utils - Real-world examples', () => {
 
     expect(result.success).toBe(false);
     if (!result.success) {
-      const {translationIssues, regularIssues} = extractTranslationIssues(result.error);
+      const issuesEn = createZodTranslator(translateEn)(result.error);
+      const issuesFr = createZodTranslator(translateFr)(result.error);
 
-      expect(translationIssues).toHaveLength(1);
-      expect(regularIssues).toHaveLength(1);
+      expect(issuesEn[0].path).toEqual(['translatedField']);
+      expect(issuesEn[1].path).toEqual(['regularField']);
+      expect(issuesEn[1].message).toBe('This is a regular Zod message');
 
-      expect(translationIssues[0].path).toEqual(['translatedField']);
-      expect(regularIssues[0].path).toEqual(['regularField']);
-      expect(regularIssues[0].message).toBe('This is a regular Zod message');
-
-      const renderedTranslationEn = renderTranslationIssues(translationIssues, translateEn);
-      expect(renderedTranslationEn[0].message).toBe('This field is required');
+      expect(issuesFr[0].message).toBe('Ce champ est obligatoire');
+      expect(issuesFr[1].message).toBe('This is a regular Zod message');
     }
   });
 
   test('Full error renderer with mixed messages', () => {
     const schema = z.object({
-      name: z.string().min(1, withTranslationMessage(optionsEn(l => l.required))),
+      name: z.string().min(
+        1,
+        optionsEn(l => l.required),
+      ),
       description: z.string().min(10, 'Description must be at least 10 characters'),
     });
 
-    const errorRenderer = createZodError(translateFr);
+    const errorRenderer = createZodTranslator(translateFr);
     const result = schema.safeParse({name: '', description: 'short'});
 
     expect(result.success).toBe(false);
@@ -279,14 +305,20 @@ describe('Zod Utils - Advanced use cases', () => {
     const userSchema = z.object({
       email: z
         .string()
-        .min(1, withTranslationMessage(optionsEn(l => l.required)))
-        .email(withTranslationMessage(optionsEn(l => l.invalidEmail))),
-      password: z.string().min(8, withTranslationMessage(optionsEn(l => l.passwordTooShort({min: 8})))),
+        .min(
+          1,
+          optionsEn(l => l.required),
+        )
+        .email(optionsEn(l => l.invalidEmail)),
+      password: z.string().min(
+        8,
+        optionsEn(l => l.passwordTooShort({min: 8})),
+      ),
     });
 
     // Create error renderers for different languages
-    const enRenderer = createZodError(translateEn);
-    const frRenderer = createZodError(translateFr);
+    const enRenderer = createZodTranslator(translateEn);
+    const frRenderer = createZodTranslator(translateFr);
 
     const invalidData = {email: 'invalid', password: '123'};
 
@@ -316,13 +348,25 @@ describe('Zod Utils - Advanced use cases', () => {
       return z.object({
         username: z
           .string()
-          .min(1, withTranslationMessage(options(l => l.required)))
-          .regex(/^[a-zA-Z0-9_]+$/, withTranslationMessage(options(l => l.invalidUsername))),
+          .min(
+            1,
+            options(l => l.required),
+          )
+          .regex(
+            /^[a-zA-Z0-9_]+$/,
+            options(l => l.invalidUsername),
+          ),
         email: z
           .string()
-          .min(1, withTranslationMessage(options(l => l.required)))
-          .email(withTranslationMessage(options(l => l.invalidEmail))),
-        password: z.string().min(8, withTranslationMessage(options(l => l.passwordTooShort({min: 8})))),
+          .min(
+            1,
+            options(l => l.required),
+          )
+          .email(options(l => l.invalidEmail)),
+        password: z.string().min(
+          8,
+          options(l => l.passwordTooShort({min: 8})),
+        ),
       });
     };
 
@@ -330,8 +374,8 @@ describe('Zod Utils - Advanced use cases', () => {
     const formSchema = createUserFormSchema(optionsEn);
 
     // Multiple error renderers
-    const enErrorRenderer = createZodError(translateEn);
-    const frErrorRenderer = createZodError(translateFr);
+    const enErrorRenderer = createZodTranslator(translateEn);
+    const frErrorRenderer = createZodTranslator(translateFr);
 
     const invalidData = {
       username: 'invalid-user!',

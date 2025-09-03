@@ -11,6 +11,4 @@ export {select} from './select';
 export {createTranslator} from './translator';
 export {createTranslatorFromDictionary} from './translator-from-dictionary';
 export {getTranslatorScope} from './translator-scope';
-
-// Zod utilities (optional - requires Zod as a dependency)
-export {createZodError, extractTranslationIssues, renderTranslationIssues, withTranslationMessage} from './zod-utils';
+export {createZodOptions, createZodTranslator} from './zod-utils';
