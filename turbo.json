@@ -14,6 +14,7 @@
       "persistent": true
     },
     "ts": {
+      "dependsOn": ["build"],
       "cache": false
     }
   }
