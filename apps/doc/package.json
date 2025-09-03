@@ -34,7 +34,7 @@
     "remark-html": "^16.0.1",
     "tailwind-merge": "^2.5.2",
     "tailwindcss-animate": "^1.0.7",
-    "typed-locale": "^0.4.2",
+    "typed-locale": "^0.5.0",
     "vaul": "^1.0.0",
     "zod": "^3.23.8"
   },
