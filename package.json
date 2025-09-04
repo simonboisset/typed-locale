@@ -1,6 +1,5 @@
 {
   "name": "typed-locale-repos",
-  "version": "0.4.2",
   "private": true,
   "workspaces": [
     "apps/*",

@@ -1,5 +1,11 @@
 # typed-locale
 
+## 0.5.2
+
+### Patch Changes
+
+- Split Zod integration and `defer` option. Improves type safety and simplifies usage.
+
 ## 0.5.1
 
 ### Patch Changes
