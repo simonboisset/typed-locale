@@ -5,17 +5,20 @@ Thank you for your interest in contributing to typed-locale! This document outli
 ## Development Setup
 
 1. **Clone the repository**
+
    ```bash
    git clone https://github.com/simonboisset/typed-locale.git
    cd typed-locale
    ```
 
 2. **Install dependencies**
+
    ```bash
    pnpm install
    ```
 
 3. **Run tests**
+
    ```bash
    pnpm test
    ```
@@ -30,11 +33,13 @@ Thank you for your interest in contributing to typed-locale! This document outli
 ### Development Workflow
 
 1. **Create a new branch**
+
    ```bash
-   git checkout -b feature/your-feature-name
+   git checkout -b feat/your-feature-name
    ```
 
 2. **Make your changes**
+
    - Write your code following the existing patterns
    - Add tests for new functionality
    - Ensure all tests pass: `pnpm test`
@@ -42,25 +47,28 @@ Thank you for your interest in contributing to typed-locale! This document outli
    - Format your code: `pnpm format`
 
 3. **Create a changeset**
-   
+
    Before committing your changes, you need to create a changeset that describes what changed:
-   
+
    ```bash
    pnpm changeset
    ```
-   
+
    This will:
+
    - Prompt you to select which packages were affected
    - Ask for the type of change (patch, minor, major)
    - Request a description of the changes
    - Create a changeset file in `.changeset/`
 
    **Change Types:**
+
    - **patch**: Bug fixes and small improvements
    - **minor**: New features (backwards compatible)
    - **major**: Breaking changes
 
 4. **Commit your changes**
+
    ```bash
    git add .
    git commit -m "feat: add your feature description"
@@ -68,7 +76,7 @@ Thank you for your interest in contributing to typed-locale! This document outli
 
 5. **Push and create a Pull Request**
    ```bash
-   git push origin feature/your-feature-name
+   git push origin feat/your-feature-name
    ```
 
 ## Release Process

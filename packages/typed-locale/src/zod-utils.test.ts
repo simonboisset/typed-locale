@@ -1,7 +1,8 @@
 import {describe, expect, test} from 'vitest';
 import {z} from 'zod';
+import {createOptionDeferrer} from './deferred-translation';
 import {createTranslator} from './translator';
-import {createZodOptions, createZodTranslator} from './zod-utils';
+import {createZodTranslator} from './zod-utils';
 
 const en = {
   required: 'This field is required',
@@ -35,7 +36,7 @@ const fr = {
   },
 } as const;
 
-const optionsEn = createZodOptions(en);
+const optionsEn = createOptionDeferrer<typeof en>();
 const translateEn = createTranslator(en);
 const translateFr = createTranslator(fr);
 
@@ -101,7 +102,6 @@ describe('Zod Utils - Basic functionality', () => {
   });
 
   test('BEST PRACTICE: Single schema, multiple error renderers', () => {
-    // 1. Define your schema ONCE (language-agnostic)
     const userRegistrationSchema = z.object({
       email: z
         .string()
@@ -146,43 +146,40 @@ describe('Zod Utils - Basic functionality', () => {
 
 describe('Zod Utils - Real-world examples', () => {
   test('User registration form with mixed validation', () => {
-    const createUserSchema = (options: typeof optionsEn) => {
-      return z.object({
-        username: z
-          .string()
-          .min(
-            1,
-            options(l => l.required),
-          )
-          .regex(
-            /^[a-zA-Z0-9_]+$/,
-            options(l => l.invalidUsername),
-          ),
-        email: z
-          .string()
-          .min(
-            1,
-            options(l => l.required),
-          )
-          .email(options(l => l.invalidEmail)),
-        password: z
-          .string()
-          .min(
-            8,
-            options(l => l.passwordTooShort({min: 8})),
-          )
-          .max(
-            50,
-            options(l => l.passwordTooLong({max: 50})),
-          ),
-        age: z.number().min(
-          18,
-          options(l => l.ageTooLow({min: 18})),
+    const schema = z.object({
+      username: z
+        .string()
+        .min(
+          1,
+          optionsEn(l => l.required),
+        )
+        .regex(
+          /^[a-zA-Z0-9_]+$/,
+          optionsEn(l => l.invalidUsername),
         ),
-      });
-    };
+      email: z
+        .string()
+        .min(
+          1,
+          optionsEn(l => l.required),
+        )
+        .email(optionsEn(l => l.invalidEmail)),
+      password: z
+        .string()
+        .min(
+          8,
+          optionsEn(l => l.passwordTooShort({min: 8})),
+        )
+        .max(
+          50,
+          optionsEn(l => l.passwordTooLong({max: 50})),
+        ),
+      age: z.number().min(
+        18,
+        optionsEn(l => l.ageTooLow({min: 18})),
+      ),
+    });
 
-    const schema = createUserSchema(optionsEn);
     const errorRenderer = createZodTranslator(translateFr);
 
     const result = schema.safeParse({
@@ -208,22 +205,19 @@ describe('Zod Utils - Real-world examples', () => {
   });
 
   test('Nested validation with translation options', () => {
-    const createNestedSchema = (options: typeof optionsEn) => {
-      return z.object({
-        profile: z.object({
-          bio: z.string().min(
-            10,
-            optionsEn(l => l.nested.validation.stringTooShort({min: 10})),
-          ),
-          score: z.number().min(
-            0,
-            optionsEn(l => l.nested.validation.numberTooLow({min: 0})),
-          ),
-        }),
-      });
-    };
+    const schema = z.object({
+      profile: z.object({
+        bio: z.string().min(
+          10,
+          optionsEn(l => l.nested.validation.stringTooShort({min: 10})),
+        ),
+        score: z.number().min(
+          0,
+          optionsEn(l => l.nested.validation.numberTooLow({min: 0})),
+        ),
+      }),
+    });
 
-    const schema = createNestedSchema(optionsEn);
     const result = schema.safeParse({
       profile: {
         bio: 'short',
@@ -301,7 +295,6 @@ describe('Zod Utils - Real-world examples', () => {
 
 describe('Zod Utils - Advanced use cases', () => {
   test('Single schema with multiple language renderers (RECOMMENDED PATTERN)', () => {
-    // Define ONE schema that works for ALL languages
     const userSchema = z.object({
       email: z
         .string()
@@ -321,8 +314,6 @@ describe('Zod Utils - Advanced use cases', () => {
     const frRenderer = createZodTranslator(translateFr);
 
     const invalidData = {email: 'invalid', password: '123'};
-
-    // Use the SAME schema for validation
     const result = userSchema.safeParse(invalidData);
 
     expect(result.success).toBe(false);
