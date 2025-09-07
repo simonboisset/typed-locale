@@ -1,5 +1,11 @@
 # typed-locale
 
+## 0.5.3
+
+### Patch Changes
+
+- 613d69b: Remove zod utils. Deferred options is more agnostic and can be used with zod too.
+
 ## 0.5.2
 
 ### Patch Changes
